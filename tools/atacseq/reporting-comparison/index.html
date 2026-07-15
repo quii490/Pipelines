@@ -10,31 +10,31 @@
       
       
       
-        <link rel="canonical" href="https://quii490.github.io/Pipelines/tutorials/cutrun/">
+        <link rel="canonical" href="https://quii490.github.io/Pipelines/tools/atacseq/reporting-comparison/">
       
       
-        <link rel="prev" href="../atacseq/">
+        <link rel="prev" href="../regions-motif/">
       
       
-        <link rel="next" href="../../troubleshooting/">
+        <link rel="next" href="../te/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>CUT&RUN - Lab Bioinformatics Pipelines</title>
+        <title>报告、汇总与跨对比 - Lab Bioinformatics Pipelines</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,7 +53,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cutrun" class="md-skip">
+        <a href="#atac-seq" class="md-skip">
           跳转至
         </a>
       
@@ -92,7 +92,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../.." title="Lab Bioinformatics Pipelines" class="md-header__button md-logo" aria-label="Lab Bioinformatics Pipelines" data-md-component="logo">
+    <a href="../../.." title="Lab Bioinformatics Pipelines" class="md-header__button md-logo" aria-label="Lab Bioinformatics Pipelines" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CUT&RUN
+              报告、汇总与跨对比
             
           </span>
         </div>
@@ -225,7 +225,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -246,7 +246,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../getting-started/" class="md-tabs__link">
+        <a href="../../../getting-started/" class="md-tabs__link">
           
   
   
@@ -275,7 +275,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../pipelines/rnaseq/" class="md-tabs__link">
+        <a href="../../../pipelines/rnaseq/" class="md-tabs__link">
           
   
   
@@ -296,11 +296,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../tools/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -322,7 +324,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../topics/" class="md-tabs__link">
+        <a href="../../../topics/" class="md-tabs__link">
           
   
   
@@ -344,7 +346,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../reference/" class="md-tabs__link">
+        <a href="../../../reference/" class="md-tabs__link">
           
   
   
@@ -362,19 +364,17 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../tips/" class="md-tabs__link">
           
   
   
     
   
-  教程
+  实用技巧
 
         </a>
       </li>
@@ -388,7 +388,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../troubleshooting/" class="md-tabs__link">
+      <a href="../../../troubleshooting/" class="md-tabs__link">
         
   
   
@@ -398,28 +398,6 @@
 
       </a>
     </li>
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../maintenance/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  维护
-
-        </a>
-      </li>
-    
   
 
       
@@ -445,7 +423,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Lab Bioinformatics Pipelines" class="md-nav__button md-logo" aria-label="Lab Bioinformatics Pipelines" data-md-component="logo">
+    <a href="../../.." title="Lab Bioinformatics Pipelines" class="md-nav__button md-logo" aria-label="Lab Bioinformatics Pipelines" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -475,7 +453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -537,7 +515,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../getting-started/" class="md-nav__link ">
+            <a href="../../../getting-started/" class="md-nav__link ">
               
   
   
@@ -581,7 +559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/installation/" class="md-nav__link">
+      <a href="../../../getting-started/installation/" class="md-nav__link">
         
   
   
@@ -609,7 +587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/command-line/" class="md-nav__link">
+      <a href="../../../getting-started/command-line/" class="md-nav__link">
         
   
   
@@ -637,7 +615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/common-workflow/" class="md-nav__link">
+      <a href="../../../getting-started/common-workflow/" class="md-nav__link">
         
   
   
@@ -665,7 +643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/naming/" class="md-nav__link">
+      <a href="../../../getting-started/naming/" class="md-nav__link">
         
   
   
@@ -693,7 +671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/references/" class="md-nav__link">
+      <a href="../../../getting-started/references/" class="md-nav__link">
         
   
   
@@ -721,7 +699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/security/" class="md-nav__link">
+      <a href="../../../getting-started/security/" class="md-nav__link">
         
   
   
@@ -859,7 +837,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../pipelines/rnaseq/" class="md-nav__link ">
+            <a href="../../../pipelines/rnaseq/" class="md-nav__link ">
               
   
   
@@ -903,7 +881,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipelines/rnaseq/quick-start/" class="md-nav__link">
+      <a href="../../../pipelines/rnaseq/quick-start/" class="md-nav__link">
         
   
   
@@ -931,7 +909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipelines/rnaseq/input/" class="md-nav__link">
+      <a href="../../../pipelines/rnaseq/input/" class="md-nav__link">
         
   
   
@@ -959,7 +937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipelines/rnaseq/running/" class="md-nav__link">
+      <a href="../../../pipelines/rnaseq/running/" class="md-nav__link">
         
   
   
@@ -987,7 +965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipelines/rnaseq/recipes/" class="md-nav__link">
+      <a href="../../../pipelines/rnaseq/recipes/" class="md-nav__link">
         
   
   
@@ -1015,7 +993,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipelines/rnaseq/parameters/" class="md-nav__link">
+      <a href="../../../pipelines/rnaseq/parameters/" class="md-nav__link">
         
   
   
@@ -1043,7 +1021,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipelines/rnaseq/workflow/" class="md-nav__link">
+      <a href="../../../pipelines/rnaseq/workflow/" class="md-nav__link">
         
   
   
@@ -1071,7 +1049,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipelines/rnaseq/outputs/" class="md-nav__link">
+      <a href="../../../pipelines/rnaseq/outputs/" class="md-nav__link">
         
   
   
@@ -1099,7 +1077,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipelines/rnaseq/qc/" class="md-nav__link">
+      <a href="../../../pipelines/rnaseq/qc/" class="md-nav__link">
         
   
   
@@ -1127,7 +1105,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipelines/rnaseq/downstream/" class="md-nav__link">
+      <a href="../../../pipelines/rnaseq/downstream/" class="md-nav__link">
         
   
   
@@ -1155,7 +1133,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipelines/rnaseq/troubleshooting/" class="md-nav__link">
+      <a href="../../../pipelines/rnaseq/troubleshooting/" class="md-nav__link">
         
   
   
@@ -1234,7 +1212,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../pipelines/atacseq/" class="md-nav__link ">
+            <a href="../../../pipelines/atacseq/" class="md-nav__link ">
               
   
   
@@ -1278,7 +1256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipelines/atacseq/quick-start/" class="md-nav__link">
+      <a href="../../../pipelines/atacseq/quick-start/" class="md-nav__link">
         
   
   
@@ -1306,7 +1284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipelines/atacseq/input/" class="md-nav__link">
+      <a href="../../../pipelines/atacseq/input/" class="md-nav__link">
         
   
   
@@ -1334,7 +1312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipelines/atacseq/running/" class="md-nav__link">
+      <a href="../../../pipelines/atacseq/running/" class="md-nav__link">
         
   
   
@@ -1362,7 +1340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipelines/atacseq/recipes/" class="md-nav__link">
+      <a href="../../../pipelines/atacseq/recipes/" class="md-nav__link">
         
   
   
@@ -1390,7 +1368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipelines/atacseq/parameters/" class="md-nav__link">
+      <a href="../../../pipelines/atacseq/parameters/" class="md-nav__link">
         
   
   
@@ -1418,7 +1396,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipelines/atacseq/workflow/" class="md-nav__link">
+      <a href="../../../pipelines/atacseq/workflow/" class="md-nav__link">
         
   
   
@@ -1446,7 +1424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipelines/atacseq/outputs/" class="md-nav__link">
+      <a href="../../../pipelines/atacseq/outputs/" class="md-nav__link">
         
   
   
@@ -1474,7 +1452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipelines/atacseq/qc/" class="md-nav__link">
+      <a href="../../../pipelines/atacseq/qc/" class="md-nav__link">
         
   
   
@@ -1502,7 +1480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipelines/atacseq/downstream/" class="md-nav__link">
+      <a href="../../../pipelines/atacseq/downstream/" class="md-nav__link">
         
   
   
@@ -1530,7 +1508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipelines/atacseq/troubleshooting/" class="md-nav__link">
+      <a href="../../../pipelines/atacseq/troubleshooting/" class="md-nav__link">
         
   
   
@@ -1609,7 +1587,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../pipelines/cutrun/" class="md-nav__link ">
+            <a href="../../../pipelines/cutrun/" class="md-nav__link ">
               
   
   
@@ -1653,7 +1631,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipelines/cutrun/quick-start/" class="md-nav__link">
+      <a href="../../../pipelines/cutrun/quick-start/" class="md-nav__link">
         
   
   
@@ -1681,7 +1659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipelines/cutrun/input/" class="md-nav__link">
+      <a href="../../../pipelines/cutrun/input/" class="md-nav__link">
         
   
   
@@ -1709,7 +1687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipelines/cutrun/running/" class="md-nav__link">
+      <a href="../../../pipelines/cutrun/running/" class="md-nav__link">
         
   
   
@@ -1737,7 +1715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipelines/cutrun/recipes/" class="md-nav__link">
+      <a href="../../../pipelines/cutrun/recipes/" class="md-nav__link">
         
   
   
@@ -1765,7 +1743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipelines/cutrun/parameters/" class="md-nav__link">
+      <a href="../../../pipelines/cutrun/parameters/" class="md-nav__link">
         
   
   
@@ -1793,7 +1771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipelines/cutrun/workflow/" class="md-nav__link">
+      <a href="../../../pipelines/cutrun/workflow/" class="md-nav__link">
         
   
   
@@ -1821,7 +1799,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipelines/cutrun/outputs/" class="md-nav__link">
+      <a href="../../../pipelines/cutrun/outputs/" class="md-nav__link">
         
   
   
@@ -1849,7 +1827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipelines/cutrun/qc/" class="md-nav__link">
+      <a href="../../../pipelines/cutrun/qc/" class="md-nav__link">
         
   
   
@@ -1877,7 +1855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipelines/cutrun/downstream/" class="md-nav__link">
+      <a href="../../../pipelines/cutrun/downstream/" class="md-nav__link">
         
   
   
@@ -1905,7 +1883,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipelines/cutrun/troubleshooting/" class="md-nav__link">
+      <a href="../../../pipelines/cutrun/troubleshooting/" class="md-nav__link">
         
   
   
@@ -1945,6 +1923,8 @@
       
   
   
+    
+  
   
   
     
@@ -1964,20 +1944,23 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tools/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -1995,13 +1978,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2043,10 +2026,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -2054,7 +2040,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tools/rnaseq/" class="md-nav__link ">
+            <a href="../../rnaseq/" class="md-nav__link ">
               
   
   
@@ -2072,7 +2058,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -2098,7 +2084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/rnaseq/bam-to-counts/" class="md-nav__link">
+      <a href="../../rnaseq/bam-to-counts/" class="md-nav__link">
         
   
   
@@ -2126,7 +2112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/rnaseq/counts-to-de/" class="md-nav__link">
+      <a href="../../rnaseq/counts-to-de/" class="md-nav__link">
         
   
   
@@ -2154,7 +2140,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/rnaseq/de-tools/" class="md-nav__link">
+      <a href="../../rnaseq/de-tools/" class="md-nav__link">
         
   
   
@@ -2182,7 +2168,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/rnaseq/snakemake/" class="md-nav__link">
+      <a href="../../rnaseq/snakemake/" class="md-nav__link">
         
   
   
@@ -2210,7 +2196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/rnaseq/operations/" class="md-nav__link">
+      <a href="../../rnaseq/operations/" class="md-nav__link">
         
   
   
@@ -2243,6 +2229,8 @@
                 
   
   
+    
+  
   
   
     
@@ -2260,24 +2248,31 @@
       
         
       
+        
+      
+        
+      
     
     
     
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tools/atacseq/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -2295,13 +2290,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2321,7 +2316,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/atacseq/rebuild/" class="md-nav__link">
+      <a href="../command-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    统一入口与完整清单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rebuild/" class="md-nav__link">
         
   
   
@@ -2349,7 +2372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/atacseq/signal-qc/" class="md-nav__link">
+      <a href="../signal-qc/" class="md-nav__link">
         
   
   
@@ -2377,7 +2400,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/atacseq/regions-motif/" class="md-nav__link">
+      <a href="../regions-motif/" class="md-nav__link">
         
   
   
@@ -2402,10 +2425,129 @@
                 
   
   
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    报告、汇总与跨对比
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    报告、汇总与跨对比
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#qc-generate_qc_reportpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重建 QC 报告：generate_qc_report.py
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profilerun_atac_profile_heatmapssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一次生成多类 profile：run_atac_profile_heatmaps.sh
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contrast-heatmaprun_cross_contrast_heatmapsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        跨 contrast heatmap：run_cross_contrast_heatmap.sh
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        输出整理器
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
   
   
     <li class="md-nav__item">
-      <a href="../../tools/atacseq/te/" class="md-nav__link">
+      <a href="../te/" class="md-nav__link">
         
   
   
@@ -2453,16 +2595,23 @@
       
         
       
+        
+      
+        
+      
     
     
     
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -2470,7 +2619,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tools/cutrun/" class="md-nav__link ">
+            <a href="../../cutrun/" class="md-nav__link ">
               
   
   
@@ -2488,7 +2637,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -2514,7 +2663,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/cutrun/recovery-report/" class="md-nav__link">
+      <a href="../../cutrun/validation-status/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preflight、状态与完整性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cutrun/recovery-report/" class="md-nav__link">
         
   
   
@@ -2542,7 +2719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/cutrun/signal-peaks/" class="md-nav__link">
+      <a href="../../cutrun/signal-peaks/" class="md-nav__link">
         
   
   
@@ -2570,7 +2747,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/cutrun/te-methods/" class="md-nav__link">
+      <a href="../../cutrun/annotation-enrichment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    注释、overlap 与通路
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cutrun/te-methods/" class="md-nav__link">
         
   
   
@@ -2652,7 +2857,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../topics/" class="md-nav__link ">
+            <a href="../../../topics/" class="md-nav__link ">
               
   
   
@@ -2696,7 +2901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../topics/file-formats/" class="md-nav__link">
+      <a href="../../../topics/file-formats/" class="md-nav__link">
         
   
   
@@ -2724,7 +2929,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../topics/normalization/" class="md-nav__link">
+      <a href="../../../topics/normalization/" class="md-nav__link">
         
   
   
@@ -2752,7 +2957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../topics/experimental-design/" class="md-nav__link">
+      <a href="../../../topics/experimental-design/" class="md-nav__link">
         
   
   
@@ -2780,7 +2985,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../topics/te-analysis/" class="md-nav__link">
+      <a href="../../../topics/te-analysis/" class="md-nav__link">
         
   
   
@@ -2808,7 +3013,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../topics/differential-analysis/" class="md-nav__link">
+      <a href="../../../topics/differential-analysis/" class="md-nav__link">
         
   
   
@@ -2836,7 +3041,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../topics/qc/" class="md-nav__link">
+      <a href="../../../topics/qc/" class="md-nav__link">
         
   
   
@@ -2864,7 +3069,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../topics/results-interpretation/" class="md-nav__link">
+      <a href="../../../topics/results-interpretation/" class="md-nav__link">
         
   
   
@@ -2892,7 +3097,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../topics/reproducibility/" class="md-nav__link">
+      <a href="../../../topics/reproducibility/" class="md-nav__link">
         
   
   
@@ -2960,7 +3165,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../reference/" class="md-nav__link ">
+            <a href="../../../reference/" class="md-nav__link ">
               
   
   
@@ -3004,7 +3209,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/input-formats/" class="md-nav__link">
+      <a href="../../../reference/input-formats/" class="md-nav__link">
         
   
   
@@ -3032,7 +3237,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/cli/" class="md-nav__link">
+      <a href="../../../reference/cli/" class="md-nav__link">
         
   
   
@@ -3060,7 +3265,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/configuration/" class="md-nav__link">
+      <a href="../../../reference/configuration/" class="md-nav__link">
         
   
   
@@ -3088,7 +3293,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/outputs/" class="md-nav__link">
+      <a href="../../../reference/outputs/" class="md-nav__link">
         
   
   
@@ -3116,7 +3321,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/glossary/" class="md-nav__link">
+      <a href="../../../reference/glossary/" class="md-nav__link">
         
   
   
@@ -3140,337 +3345,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    教程
-  
-
-    
-  </span>
-  
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_7">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    教程
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../rnaseq/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    RNA-seq
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../atacseq/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ATAC-seq
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    CUT&RUN
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    CUT&RUN
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#a-manifest" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        A. 生成并审查 manifest
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#b-preview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        B. Preview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#c" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        C. 正式运行
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#d" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        D. 判断完成状态
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#e-signal" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        E. 比较三类 signal
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#f" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        F. 下游恢复
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#g-te-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        G. TE 方法 plan
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        教程验收
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../troubleshooting/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    故障排查
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -3511,18 +3385,18 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../maintenance/" class="md-nav__link ">
+            <a href="../../../tips/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
     
   
-    维护
+    实用技巧
   
 
     
@@ -3533,18 +3407,18 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
-    维护
+    实用技巧
   
 
           </label>
@@ -3559,14 +3433,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maintenance/editing-guide/" class="md-nav__link">
+      <a href="../../../tips/cluster-login/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    自己维护文档
+    登录和使用计算集群
   
 
     
@@ -3587,14 +3461,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maintenance/content-status/" class="md-nav__link">
+      <a href="../../../tips/cluster-jobs/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    内容状态
+    Slurm、后台任务与资源
   
 
     
@@ -3615,14 +3489,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maintenance/changelog/" class="md-nav__link">
+      <a href="../../../tips/shell-productivity/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    更新记录
+    Shell、日志与文件传输
   
 
     
@@ -3643,14 +3517,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../page-templates/sop/" class="md-nav__link">
+      <a href="../../../tips/ai-assisted-work/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    页面模板
+    使用 AI 辅助生信工作
   
 
     
@@ -3671,14 +3545,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../page-templates/tool/" class="md-nav__link">
+      <a href="../../../tips/analysis-habits/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    工具模板
+    分析记录与交付习惯
   
 
     
@@ -3695,6 +3569,33 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    故障排查
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -3726,10 +3627,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#a-manifest" class="md-nav__link">
+  <a href="#qc-generate_qc_reportpy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        A. 生成并审查 manifest
+        重建 QC 报告：generate_qc_report.py
       
     </span>
   </a>
@@ -3737,10 +3638,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#b-preview" class="md-nav__link">
+  <a href="#profilerun_atac_profile_heatmapssh" class="md-nav__link">
     <span class="md-ellipsis">
       
-        B. Preview
+        一次生成多类 profile：run_atac_profile_heatmaps.sh
       
     </span>
   </a>
@@ -3748,54 +3649,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#c" class="md-nav__link">
+  <a href="#contrast-heatmaprun_cross_contrast_heatmapsh" class="md-nav__link">
     <span class="md-ellipsis">
       
-        C. 正式运行
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#d" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        D. 判断完成状态
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#e-signal" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        E. 比较三类 signal
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#f" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        F. 下游恢复
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#g-te-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        G. TE 方法 plan
+        跨 contrast heatmap：run_cross_contrast_heatmap.sh
       
     </span>
   </a>
@@ -3806,7 +3663,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        教程验收
+        输出整理器
       
     </span>
   </a>
@@ -3830,7 +3687,7 @@
 
 
   
-    <a href="https://github.com/quii490/Pipelines/edit/main/docs/content/tutorials/cutrun.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/quii490/Pipelines/edit/main/docs/content/tools/atacseq/reporting-comparison.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3838,83 +3695,151 @@
   
 
 
-<h1 id="cutrun">CUT&amp;RUN 实战教程<a class="headerlink" href="#cutrun" title="Permanent link">&para;</a></h1>
+<h1 id="atac-seq">ATAC-seq 报告、汇总与跨对比工具<a class="headerlink" href="#atac-seq" title="Permanent link">&para;</a></h1>
 <table>
 <thead>
 <tr>
 <th>状态</th>
-<th>数据</th>
-<th>最后审查</th>
+<th>维护人</th>
+<th>最后验证</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Draft review</td>
-<td>使用含 matched control 的公开/已授权数据</td>
+<td>ATAC-seq maintainers</td>
 <td>2026-07-16</td>
 </tr>
 </tbody>
 </table>
-<p>选择一个 target、至少 2 个 biological replicates，并包含明确 IgG/input control。教程练习 manifest、preview、三类 BAM/track、恢复下游和 TE 方法状态。</p>
-<h2 id="a-manifest">A. 生成并审查 manifest<a class="headerlink" href="#a-manifest" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>bash<span class="w"> </span>CUTnRUN/pipelines/chipseq_auto_nf/run_auto_chipseq.sh<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span>--fastq-dir<span class="w"> </span>/path/to/tutorial/cutrun/fastq<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>--species<span class="w"> </span>hg38<span class="w"> </span>--assay<span class="w"> </span>cutrun<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span>--outdir<span class="w"> </span>/path/to/tutorial/cutrun/results<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span>--init-only
+<h2 id="qc-generate_qc_reportpy">重建 QC 报告：<code>generate_qc_report.py</code><a class="headerlink" href="#qc-generate_qc_reportpy" title="Permanent link">&para;</a></h2>
+<p>当 <code>03_qc/atac_qc_summary_with_metrics.tsv</code> 和 <code>qc_pass_fail.tsv</code> 已存在，只需重建中文说明时运行：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python3<span class="w"> </span>ATAC-seq/scripts/generate_qc_report.py<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span>--outdir<span class="w"> </span>/path/to/results<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>--species<span class="w"> </span>hg38
 </code></pre></div>
-<p>确认列：<code>sample,species,assay,group,replicate,igg,is_igg,layout,fastq_1,fastq_2</code>。每个 target 的 <code>igg</code> 必须指向 <code>is_igg=true</code> 的实际 sample。</p>
-<h2 id="b-preview">B. Preview<a class="headerlink" href="#b-preview" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>bash<span class="w"> </span>CUTnRUN/pipelines/chipseq_auto_nf/run_pipeline.sh<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span>--manifest<span class="w"> </span>/path/to/tutorial/cutrun/results/_automation/inputs/manifest.csv<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span>--outdir<span class="w"> </span>/path/to/tutorial/cutrun/results<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span>--preview
+<p>输出 <code>/path/to/results/QC_REPORT.md</code>。该脚本只汇总已有表格；如果 FRiP、NRF/PBC 或 fragment metrics 缺失，应先补计算而不是期待报告脚本生成数据。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align: right;">必需</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--outdir</code></td>
+<td style="text-align: right;">是</td>
+<td>pipeline results 根目录</td>
+</tr>
+<tr>
+<td><code>--species</code></td>
+<td style="text-align: right;">否</td>
+<td>报告中显示的 assembly；默认 <code>unknown</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="profilerun_atac_profile_heatmapssh">一次生成多类 profile：<code>run_atac_profile_heatmaps.sh</code><a class="headerlink" href="#profilerun_atac_profile_heatmapssh" title="Permanent link">&para;</a></h2>
+<p>适合已有标准 bigWig 后，一次生成 TSS、gene body、TE 和 L1 aggregate 图：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>bash<span class="w"> </span>ATAC-seq/scripts/run_atac_profile_heatmaps.sh<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span>--result-dir<span class="w"> </span>/path/to/results<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span>--species<span class="w"> </span>hg38<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span>--features<span class="w"> </span>tss,gene_body,te,l1<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span>--preset<span class="w"> </span>standard<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span>--cores<span class="w"> </span><span class="m">12</span>
 </code></pre></div>
-<p>修复 FASTQ、control、reference 或磁盘错误，不使用 <code>--skip-preflight</code> 掩盖问题。</p>
-<h2 id="c">C. 正式运行<a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>bash<span class="w"> </span>CUTnRUN/pipelines/chipseq_auto_nf/run_auto_chipseq.sh<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span>--fastq-dir<span class="w"> </span>/path/to/tutorial/cutrun/fastq<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span>--manifest<span class="w"> </span>/path/to/tutorial/cutrun/results/_automation/inputs/manifest.csv<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span>--species<span class="w"> </span>hg38<span class="w"> </span>--assay<span class="w"> </span>cutrun<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span>--outdir<span class="w"> </span>/path/to/tutorial/cutrun/results<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span>--resource-tier<span class="w"> </span>standard<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span>--run-downstream<span class="w"> </span>--background<span class="w"> </span>--resume
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align: right;">默认</th>
+<th>选择建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--preset</code></td>
+<td style="text-align: right;"><code>standard</code></td>
+<td><code>quick</code> 每类 1,000 regions；<code>standard</code> 3,000；<code>full</code> 10,000</td>
+</tr>
+<tr>
+<td><code>--features</code></td>
+<td style="text-align: right;">脚本默认集合</td>
+<td>逗号分隔 <code>tss,gene_body,te,l1</code></td>
+</tr>
+<tr>
+<td><code>--te-flank</code></td>
+<td style="text-align: right;"><code>15000</code></td>
+<td>TE/L1 5′ anchor 两侧范围；短 TE 不应机械使用超大范围</td>
+</tr>
+<tr>
+<td><code>--body-length</code></td>
+<td style="text-align: right;">脚本默认值</td>
+<td>gene/TE scale-regions 的显示长度，不是真实长度</td>
+</tr>
+<tr>
+<td><code>--max-*-regions</code></td>
+<td style="text-align: right;">随 preset</td>
+<td>设定 deterministic display cap，影响展示集合</td>
+</tr>
+<tr>
+<td><code>--write-matrix-tab</code></td>
+<td style="text-align: right;"><code>false</code></td>
+<td><code>true</code> 会输出很大的明文矩阵</td>
+</tr>
+</tbody>
+</table>
+<p>也可显式提供 <code>--bw-glob</code>、<code>--samplesheet</code>、<code>--tss-bed</code>、<code>--gene-body-bed</code>、<code>--te-bed</code> 和 <code>--l1-bed</code>。所有 BED 与 bigWig 必须属于同一 assembly，并保存实际抽样后的 region 文件。</p>
+<h2 id="contrast-heatmaprun_cross_contrast_heatmapsh">跨 contrast heatmap：<code>run_cross_contrast_heatmap.sh</code><a class="headerlink" href="#contrast-heatmaprun_cross_contrast_heatmapsh" title="Permanent link">&para;</a></h2>
+<p>该工具读取已有 differential region 表，不重新运行 edgeR：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>bash<span class="w"> </span>ATAC-seq/scripts/run_cross_contrast_heatmap.sh<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span>--level-dir<span class="w"> </span>/path/to/results/08_downstream/peak_level<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span>--contrasts<span class="w"> </span>KO_vs_WT,Rescue_vs_KO<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span>--top-n<span class="w"> </span><span class="m">150</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span>--annotation-mode<span class="w"> </span>gene_te<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span>--outdir<span class="w"> </span>/path/to/results/08_downstream/cross_contrast
 </code></pre></div>
-<p>第一次保持 <code>te-k=25</code>、TE duplicate policy <code>mark</code> 和默认 tracks，不同时测试多个高级策略。</p>
-<h2 id="d">D. 判断完成状态<a class="headerlink" href="#d" title="Permanent link">&para;</a></h2>
-<p>先看：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>09_downstream/run_report.html
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>09_downstream/module_status_latest.tsv
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>09_downstream/module_status_summary.json
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>09_downstream/run_manifest.json
-</code></pre></div>
-<p>区分核心结果与可选模块。HOMER/外部 TE 方法失败不会删除 BAM/counts，但必须在报告中解释。</p>
-<h2 id="e-signal">E. 比较三类 signal<a class="headerlink" href="#e-signal" title="Permanent link">&para;</a></h2>
-<p>在 IGV 或统一 heatmap 中分别查看：</p>
-<ul>
-<li>standard track：常规高可信 signal/peak；</li>
-<li>TE-aware track：保留更多重复区域证据；</li>
-<li>locus-best track：候选 locus 形状。</li>
-</ul>
-<p>不要把三类 track 放进同一个 correlation matrix；不要把 locus-best 当作 fractional counts。</p>
-<h2 id="f">F. 下游恢复<a class="headerlink" href="#f" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>bash<span class="w"> </span>CUTnRUN/pipelines/chipseq_auto_nf/run_downstream.sh<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span>--results-dir<span class="w"> </span>/path/to/tutorial/cutrun/results<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span>--species<span class="w"> </span>hg38<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span>--resource-tier<span class="w"> </span>standard<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span>--resume
-</code></pre></div>
-<p>观察 attempt-aware status：已通过模块应复用，失败模块重跑。确认 <code>latest</code> 与本次 run ID 一致。</p>
-<h2 id="g-te-plan">G. TE 方法 plan<a class="headerlink" href="#g-te-plan" title="Permanent link">&para;</a></h2>
-<p>先以不执行模式检查 T3E/Allo/RepEnTools 计划和依赖，再决定是否 <code>--execute</code>。RepEnTools 若没有 CHM13 reference、2 ChIP + 2 input，应为 SKIP，不应生成空图。</p>
-<h2 id="_1">教程验收<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 能修正多个 control 的 <code>igg</code> mapping；</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 能区分 narrow 与 broad peaks；</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 能解释 PASS/FAIL/SKIP/INCOMPLETE；</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 能解释 TE secondary/NH tags 为什么重要；</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 能说明 motif enrichment、peak number 和 correlation 各自不能证明什么。</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align: right;">默认</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--level-dir</code></td>
+<td style="text-align: right;">必需</td>
+<td>含多个 contrast 差异表的 peak/bin level 目录</td>
+</tr>
+<tr>
+<td><code>--contrasts</code></td>
+<td style="text-align: right;">必需</td>
+<td>逗号分隔，名称与目录/表一致且方向固定</td>
+</tr>
+<tr>
+<td><code>--top-n</code></td>
+<td style="text-align: right;"><code>100</code></td>
+<td>用于展示的 region 数量，不改变原始 DE 结果</td>
+</tr>
+<tr>
+<td><code>--annotation-mode</code></td>
+<td style="text-align: right;"><code>gene_te</code></td>
+<td><code>gene_te</code>、<code>gene</code> 或 <code>none</code></td>
+</tr>
+<tr>
+<td><code>--output-prefix</code></td>
+<td style="text-align: right;">自动</td>
+<td>自定义结果前缀</td>
+</tr>
+</tbody>
+</table>
+<p>先确认所有 contrast 的 logFC 方向。例如 <code>KO_vs_WT</code> 和 <code>WT_vs_KO</code> 不能混在同一图中而不翻转符号。</p>
+<h2 id="_1">输出整理器<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><code>organize_atac_downstream_outputs.py</code> 将 R 原始输出复制到稳定的 <code>figures/</code>、<code>results/</code>、<code>reports/</code> 结构，并生成文件索引。它通常由 downstream wrapper 自动调用，不建议普通用户直接运行。原始结果保留在 <code>legacy/raw_r_output</code>，因此整理不是统计重算，也不应删除原始目录。</p>
+<p><code>prepare_manifest_fastq.py</code>、<code>plot_atac_qc.R</code> 和 <code>run_peak_annotation_chipseeker.R</code> 同样属于内部后端。调试时先运行其上层 wrapper；只有开发接口时才直接调用，并同步更新 wrapper 的 <code>--help</code> 与本站文档。</p>
 
 
 
@@ -3970,10 +3895,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

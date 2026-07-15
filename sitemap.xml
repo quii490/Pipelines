@@ -33,30 +33,6 @@
          <lastmod>2026-07-15</lastmod>
     </url>
     <url>
-         <loc>https://quii490.github.io/Pipelines/maintenance/</loc>
-         <lastmod>2026-07-15</lastmod>
-    </url>
-    <url>
-         <loc>https://quii490.github.io/Pipelines/maintenance/changelog/</loc>
-         <lastmod>2026-07-15</lastmod>
-    </url>
-    <url>
-         <loc>https://quii490.github.io/Pipelines/maintenance/content-status/</loc>
-         <lastmod>2026-07-15</lastmod>
-    </url>
-    <url>
-         <loc>https://quii490.github.io/Pipelines/maintenance/editing-guide/</loc>
-         <lastmod>2026-07-15</lastmod>
-    </url>
-    <url>
-         <loc>https://quii490.github.io/Pipelines/page-templates/sop/</loc>
-         <lastmod>2026-07-15</lastmod>
-    </url>
-    <url>
-         <loc>https://quii490.github.io/Pipelines/page-templates/tool/</loc>
-         <lastmod>2026-07-15</lastmod>
-    </url>
-    <url>
          <loc>https://quii490.github.io/Pipelines/pipelines/atacseq/</loc>
          <lastmod>2026-07-15</lastmod>
     </url>
@@ -213,6 +189,30 @@
          <lastmod>2026-07-15</lastmod>
     </url>
     <url>
+         <loc>https://quii490.github.io/Pipelines/tips/</loc>
+         <lastmod>2026-07-15</lastmod>
+    </url>
+    <url>
+         <loc>https://quii490.github.io/Pipelines/tips/ai-assisted-work/</loc>
+         <lastmod>2026-07-15</lastmod>
+    </url>
+    <url>
+         <loc>https://quii490.github.io/Pipelines/tips/analysis-habits/</loc>
+         <lastmod>2026-07-15</lastmod>
+    </url>
+    <url>
+         <loc>https://quii490.github.io/Pipelines/tips/cluster-jobs/</loc>
+         <lastmod>2026-07-15</lastmod>
+    </url>
+    <url>
+         <loc>https://quii490.github.io/Pipelines/tips/cluster-login/</loc>
+         <lastmod>2026-07-15</lastmod>
+    </url>
+    <url>
+         <loc>https://quii490.github.io/Pipelines/tips/shell-productivity/</loc>
+         <lastmod>2026-07-15</lastmod>
+    </url>
+    <url>
          <loc>https://quii490.github.io/Pipelines/tools/</loc>
          <lastmod>2026-07-15</lastmod>
     </url>
@@ -221,11 +221,19 @@
          <lastmod>2026-07-15</lastmod>
     </url>
     <url>
+         <loc>https://quii490.github.io/Pipelines/tools/atacseq/command-reference/</loc>
+         <lastmod>2026-07-15</lastmod>
+    </url>
+    <url>
          <loc>https://quii490.github.io/Pipelines/tools/atacseq/rebuild/</loc>
          <lastmod>2026-07-15</lastmod>
     </url>
     <url>
          <loc>https://quii490.github.io/Pipelines/tools/atacseq/regions-motif/</loc>
+         <lastmod>2026-07-15</lastmod>
+    </url>
+    <url>
+         <loc>https://quii490.github.io/Pipelines/tools/atacseq/reporting-comparison/</loc>
          <lastmod>2026-07-15</lastmod>
     </url>
     <url>
@@ -241,6 +249,10 @@
          <lastmod>2026-07-15</lastmod>
     </url>
     <url>
+         <loc>https://quii490.github.io/Pipelines/tools/cutrun/annotation-enrichment/</loc>
+         <lastmod>2026-07-15</lastmod>
+    </url>
+    <url>
          <loc>https://quii490.github.io/Pipelines/tools/cutrun/recovery-report/</loc>
          <lastmod>2026-07-15</lastmod>
     </url>
@@ -250,6 +262,10 @@
     </url>
     <url>
          <loc>https://quii490.github.io/Pipelines/tools/cutrun/te-methods/</loc>
+         <lastmod>2026-07-15</lastmod>
+    </url>
+    <url>
+         <loc>https://quii490.github.io/Pipelines/tools/cutrun/validation-status/</loc>
          <lastmod>2026-07-15</lastmod>
     </url>
     <url>
@@ -314,22 +330,6 @@
     </url>
     <url>
          <loc>https://quii490.github.io/Pipelines/troubleshooting/</loc>
-         <lastmod>2026-07-15</lastmod>
-    </url>
-    <url>
-         <loc>https://quii490.github.io/Pipelines/tutorials/</loc>
-         <lastmod>2026-07-15</lastmod>
-    </url>
-    <url>
-         <loc>https://quii490.github.io/Pipelines/tutorials/atacseq/</loc>
-         <lastmod>2026-07-15</lastmod>
-    </url>
-    <url>
-         <loc>https://quii490.github.io/Pipelines/tutorials/cutrun/</loc>
-         <lastmod>2026-07-15</lastmod>
-    </url>
-    <url>
-         <loc>https://quii490.github.io/Pipelines/tutorials/rnaseq/</loc>
          <lastmod>2026-07-15</lastmod>
     </url>
 </urlset>

@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://quii490.github.io/Pipelines/page-templates/sop/">
+        <link rel="canonical" href="https://quii490.github.io/Pipelines/tips/cluster-jobs/">
       
       
-        <link rel="prev" href="../../maintenance/changelog/">
+        <link rel="prev" href="../cluster-login/">
       
       
-        <link rel="next" href="../tool/">
+        <link rel="next" href="../shell-productivity/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>页面模板 - Lab Bioinformatics Pipelines</title>
+        <title>Slurm、后台任务与资源 - Lab Bioinformatics Pipelines</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sop" class="md-skip">
+        <a href="#slurm" class="md-skip">
           跳转至
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              页面模板
+              Slurm、后台任务与资源
             
           </span>
         </div>
@@ -362,17 +362,19 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../tutorials/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   
     
   
-  教程
+  实用技巧
 
         </a>
       </li>
@@ -396,30 +398,6 @@
 
       </a>
     </li>
-  
-
-      
-        
-  
-  
-  
-    
-  
-  
-    
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../maintenance/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  维护
-
-        </a>
-      </li>
-    
   
 
       
@@ -2260,6 +2238,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2312,6 +2294,34 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/atacseq/command-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    统一入口与完整清单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -2405,6 +2415,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../tools/atacseq/reporting-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    报告、汇总与跨对比
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../tools/atacseq/te/" class="md-nav__link">
         
   
@@ -2445,6 +2483,10 @@
       
         
           
+        
+      
+        
+      
         
       
         
@@ -2514,6 +2556,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../tools/cutrun/validation-status/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preflight、状态与完整性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../tools/cutrun/recovery-report/" class="md-nav__link">
         
   
@@ -2550,6 +2620,34 @@
     
   
     信号、peaks 与 annotation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/cutrun/annotation-enrichment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    注释、overlap 与通路
   
 
     
@@ -3148,6 +3246,8 @@
       
   
   
+    
+  
   
   
     
@@ -3163,31 +3263,38 @@
       
         
       
+        
+      
+        
+      
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tutorials/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
     
   
-    教程
+    实用技巧
   
 
     
@@ -3198,18 +3305,18 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
-    教程
+    实用技巧
   
 
           </label>
@@ -3224,14 +3331,172 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/rnaseq/" class="md-nav__link">
+      <a href="../cluster-login/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    RNA-seq
+    登录和使用计算集群
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slurm、后台任务与资源
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slurm、后台任务与资源
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        最小作业脚本
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        查看、取消和诊断
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        怎样申请资源
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nohuptmux-scheduler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nohup、tmux 与 scheduler
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nextflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nextflow 恢复
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shell-productivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shell、日志与文件传输
   
 
     
@@ -3252,14 +3517,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/atacseq/" class="md-nav__link">
+      <a href="../ai-assisted-work/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    ATAC-seq
+    使用 AI 辅助生信工作
   
 
     
@@ -3280,14 +3545,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/cutrun/" class="md-nav__link">
+      <a href="../analysis-habits/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    CUT&RUN
+    分析记录与交付习惯
   
 
     
@@ -3335,337 +3600,6 @@
   
 
     
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../maintenance/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    维护
-  
-
-    
-  </span>
-  
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_9">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    维护
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../maintenance/editing-guide/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    自己维护文档
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../maintenance/content-status/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    内容状态
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../maintenance/changelog/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    更新记录
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    页面模板
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    页面模板
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        目的与适用范围
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        输入与前置条件
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        操作步骤
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        输出与成功标准
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        故障排查与修改记录
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tool/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    工具模板
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
   </ul>
 </nav>
                   </div>
@@ -3696,7 +3630,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        目的与适用范围
+        最小作业脚本
       
     </span>
   </a>
@@ -3707,7 +3641,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        输入与前置条件
+        查看、取消和诊断
       
     </span>
   </a>
@@ -3718,7 +3652,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        操作步骤
+        怎样申请资源
       
     </span>
   </a>
@@ -3726,10 +3660,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#nohuptmux-scheduler" class="md-nav__link">
     <span class="md-ellipsis">
       
-        输出与成功标准
+        nohup、tmux 与 scheduler
       
     </span>
   </a>
@@ -3737,10 +3671,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#nextflow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        故障排查与修改记录
+        Nextflow 恢复
       
     </span>
   </a>
@@ -3764,7 +3698,7 @@
 
 
   
-    <a href="https://github.com/quii490/Pipelines/edit/main/docs/content/page-templates/sop.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/quii490/Pipelines/edit/main/docs/content/tips/cluster-jobs.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3772,35 +3706,57 @@
   
 
 
-<h1 id="sop">SOP 标题<a class="headerlink" href="#sop" title="Permanent link">&para;</a></h1>
-<table>
-<thead>
-<tr>
-<th>状态</th>
-<th>维护人</th>
-<th>最后审查</th>
-<th>适用版本</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Draft</td>
-<td>姓名/团队</td>
-<td>YYYY-MM-DD</td>
-<td>tag/commit</td>
-</tr>
-</tbody>
-</table>
-<h2 id="_1">目的与适用范围<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>说明适用和不适用场景。</p>
-<h2 id="_2">输入与前置条件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>列出文件、实验设计、环境和参考资源。</p>
-<h2 id="_3">操作步骤<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>提供最小可复现命令及人工检查点。</p>
-<h2 id="_4">输出与成功标准<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>列出关键文件、QC、预期结果和失败条件。</p>
-<h2 id="_5">故障排查与修改记录<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>记录问题、诊断、解决、预防和版本变化。</p>
+<h1 id="slurm">Slurm、后台任务与资源<a class="headerlink" href="#slurm" title="Permanent link">&para;</a></h1>
+<h2 id="_1">最小作业脚本<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="ch">#!/usr/bin/env bash</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">#SBATCH --job-name=atac_test</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">#SBATCH --partition=compute</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1">#SBATCH --cpus-per-task=8</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1">#SBATCH --mem=32G</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1">#SBATCH --time=08:00:00</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1">#SBATCH --output=logs/%x.%j.out</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1">#SBATCH --error=logs/%x.%j.err</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="nb">set</span><span class="w"> </span>-euo<span class="w"> </span>pipefail
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="nb">cd</span><span class="w"> </span>/path/to/project
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="nb">source</span><span class="w"> </span>/path/to/conda.sh
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>conda<span class="w"> </span>activate<span class="w"> </span>atac_core
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>bash<span class="w"> </span>/path/to/Pipelines/ATAC-seq/run_auto_atacseq.sh<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span>--mode<span class="w"> </span>auto<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span>--fastq-dir<span class="w"> </span>/path/to/fastq<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">  </span>--species<span class="w"> </span>hg38<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">  </span>--outdir<span class="w"> </span>/path/to/results<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">  </span>--preset<span class="w"> </span>standard<span class="w"> </span>--resume
+</code></pre></div>
+<p>提交前先建日志目录：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>logs
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>sbatch<span class="w"> </span>run_atac.sbatch
+</code></pre></div>
+<h2 id="_2">查看、取消和诊断<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>squeue<span class="w"> </span>-u<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$USER</span><span class="s2">&quot;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>scontrol<span class="w"> </span>show<span class="w"> </span>job<span class="w"> </span>JOB_ID
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>sacct<span class="w"> </span>-j<span class="w"> </span>JOB_ID<span class="w"> </span>--format<span class="o">=</span>JobID,JobName,State,Elapsed,AllocCPUS,ReqMem,MaxRSS,ExitCode
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>scancel<span class="w"> </span>JOB_ID
+</code></pre></div>
+<p>不要因为暂时没有日志就重复提交同一分析。先检查 job state、queue reason、输出路径和运行进程。</p>
+<h2 id="_3">怎样申请资源<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>CPU：从 pipeline 推荐值开始；线程数增加不一定线性加速，I/O-heavy 工具尤其如此。</li>
+<li>Memory：参考历史 <code>MaxRSS</code>，下一次留合理余量。OOM 后只增 CPU 通常无效。</li>
+<li>Time：包括排队后真正运行时间；超时退出可用 <code>-resume</code> 的前提是 work/cache 未删除。</li>
+<li>并发：多个 peak/样本任务会同时占内存和 I/O；总资源不是单任务资源乘以一个很小系数就一定安全。</li>
+</ul>
+<p>先用一个样本或 quick preset 做 smoke test，再提交全数据。</p>
+<h2 id="nohuptmux-scheduler"><code>nohup</code>、<code>tmux</code> 与 scheduler<a class="headerlink" href="#nohuptmux-scheduler" title="Permanent link">&para;</a></h2>
+<p>在普通服务器且管理员允许时：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>nohup<span class="w"> </span>bash<span class="w"> </span>run.sh<span class="w"> </span>&gt;<span class="w"> </span>run.log<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$!</span><span class="w"> </span>&gt;<span class="w"> </span>run.pid
+</code></pre></div>
+<p>或使用 <code>tmux</code> 保持交互会话。HPC 的正式长任务仍应使用 scheduler；<code>nohup</code> 不能替代资源调度，也不能让 login node 上的大任务变得合规。</p>
+<h2 id="nextflow">Nextflow 恢复<a class="headerlink" href="#nextflow" title="Permanent link">&para;</a></h2>
+<p><code>-resume</code> 依赖 <code>.nextflow/</code>、work 目录和相同输入/参数 hash。不要为了“清理”提前删除 work。参数改变后，Nextflow 会重跑受影响任务；不能假设所有步骤都复用。</p>
+<p>每次运行保存：job ID、commit、完整命令、config、manifest、日志和最终完成状态。</p>
 
 
 
