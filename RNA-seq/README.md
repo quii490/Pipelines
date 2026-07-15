@@ -11,7 +11,7 @@ bash rnaseq/run_auto_rnaseq.sh \
   --dry-run
 ```
 
-完整文档：<https://quii490.github.io/lab-pipelines/pipelines/rnaseq/>
+完整文档：<https://quii490.github.io/Pipelines/pipelines/rnaseq/>
 
 - 推荐主入口：`rnaseq/run_auto_rnaseq.sh`
 - 独立补跑工具：`tools/`

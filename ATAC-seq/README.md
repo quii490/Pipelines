@@ -10,7 +10,7 @@ bash run_auto_atacseq.sh \
   --init-only
 ```
 
-完整文档：<https://quii490.github.io/lab-pipelines/pipelines/atacseq/>
+完整文档：<https://quii490.github.io/Pipelines/pipelines/atacseq/>
 
 - 推荐入口：`run_auto_atacseq.sh`
 - 低层 Nextflow 入口：`run_pipeline.sh`

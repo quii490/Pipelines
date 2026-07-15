@@ -5,6 +5,33 @@ self="$(readlink -f "$0")"
 script_dir="$(dirname "$self")"
 backend="${PEAK_ANNOTATOR:-chipseeker}"
 
+if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
+  cat <<'USAGE'
+Usage:
+  cutrun_annotate_peaks --input peaks.broadPeak --ref hg38 \
+    --out-prefix out/sample [options]
+
+Backend:
+  ChIPseeker is the default. Set PEAK_ANNOTATOR=chippeakanno to reproduce the
+  legacy ChIPpeakAnno backend. Backend-specific options are forwarded to the R
+  script; the R/Bioconductor packages are only required for a real analysis.
+
+Common options:
+  --input FILE
+  --ref hg38|mm39
+  --out-prefix PREFIX
+  --gtf FILE
+  --promoter-up INT
+  --promoter-down INT
+  --te-min-length INT
+  --line-min-length INT
+  --te-min-overlap INT
+  --relaxed-window INT
+  --no-plots
+USAGE
+  exit 0
+fi
+
 case "$backend" in
   chipseeker)
     target="${script_dir}/cutrun_annotate_peaks_chipseeker.R"

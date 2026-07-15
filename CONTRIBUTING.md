@@ -24,7 +24,7 @@ mkdocs build --strict -f docs/mkdocs.yml
 - 示例路径使用 `/path/to/...` 或 `${VARIABLE}`，不得使用个人目录或内部服务器路径。
 - Quick Start 只保留跑通流程所需步骤；完整参数放入 Parameters/Reference。
 - QC 阈值必须说明适用条件，避免把经验范围写成绝对合格线。
-- 新增工具时使用 `docs/content/templates/tool.md` 模板。
+- 新增 SOP 时使用 `docs/content/page-templates/sop.md`，新增工具时使用 `docs/content/page-templates/tool.md`。
 - 图片放在 `docs/content/assets/images/`，使用相对链接并提供替代文字。
 
 ## Pull Request 检查清单
@@ -34,3 +34,4 @@ mkdocs build --strict -f docs/mkdocs.yml
 - [ ] 未提交数据、结果、日志、缓存或本地配置。
 - [ ] 未出现身份信息、密钥、真实样本或私有资源位置。
 - [ ] `mkdocs build --strict` 通过。
+- [ ] 在本地预览中检查导航、代码块、表格和 Mermaid 图。

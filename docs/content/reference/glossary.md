@@ -2,12 +2,18 @@
 
 | 术语 | 含义 |
 |---|---|
-| BAM | 排序后的 reads alignment 文件 |
-| bigWig | 适合浏览器和 profile 的连续信号轨道 |
-| FRiP | 落入 peaks 的 reads/fragments 比例 |
-| PE / SE | paired-end / single-end |
-| contrast | case 与 control 的比较定义 |
-| multi-mapping | read 可比对到多个基因组位置 |
-| family/subfamily/locus | TE 的不同计量层级 |
-| `--resume` | Nextflow 复用已完成任务缓存 |
-| preflight | 提交任务前的输入、参考与资源检查 |
+| assembly | 参考基因组版本，如 hg38、mm39 |
+| BAM/CRAM | 比对结果格式 |
+| bigWig | 连续基因组信号轨迹 |
+| biological replicate | 独立生物学样本 |
+| contrast | 统计比较方向，本文档统一为 CASE vs CONTROL |
+| FDR / padj | 多重检验校正后的显著性 |
+| FRiP | 落在 peaks 内的 reads/fragments 比例，必须注明定义 |
+| manifest / samplesheet | 样本、路径和实验设计表 |
+| MAPQ | alignment mapping quality |
+| multi-mapping | 一条 read 可合理比对到多个位置 |
+| peak | 富集或开放信号区域 |
+| resume | 利用原工作目录和任务签名复用已完成任务 |
+| TE | transposable element |
+| TSS | transcription start site |
+| upstream/downstream | 主数据处理阶段 / 统计与解释阶段 |

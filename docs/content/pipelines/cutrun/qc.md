@@ -2,15 +2,19 @@
 
 | 状态 | 维护人 | 最后审查 | 适用版本 |
 |---|---|---|---|
-| Active | CUT&RUN maintainers | 2026-07-15 | `main` |
+| Draft | CUT&RUN maintainers | 2026-07-16 | `main` |
 
-| 指标 | 重点 |
-|---|---|
-| Mapping/usable reads | 同批次一致性、参考 build |
-| FRiP/peak number | target 类型、深度、peak 参数共同解释 |
-| Signal-to-noise | target 相对 IgG/Input 的提升 |
-| Replicate correlation | 同 target 重复是否一致 |
-| Fragment distribution | assay 与 target 预期是否吻合 |
-| Control pairing | 每个 target 是否使用正确 control |
+| 指标 | 主要问题 | 异常时检查 |
+|---|---|---|
+| FASTQ/trim | 原始 reads 是否可靠 | adapter、read quality、批次 |
+| Alignment | 是否匹配正确 assembly | index、污染、read length |
+| Duplicate/complexity | 独立分子是否足够 | 起始量、PCR、测序深度 |
+| Fragment size | 是否符合 assay 特征 | layout、实验与过滤 |
+| FRiP / signal-to-noise | 信号是否集中于 peaks | control、peak type、背景 |
+| Peak number/width | 与 target 类型是否一致 | narrow/broad、cutoff、control |
+| Replicate correlation | 生物学重复是否一致 | 标签、批次、异常样本 |
+| Control background | IgG/input 是否异常 | 配对、实验背景、归一化 |
 
-IgG/background 异常会影响所有下游。不要只凭 peak 数判定成功；同时检查 browser track、重复相关和 control signal。
+TF、narrow histone mark、broad histone mark 不能共用一个机械阈值。先确认指标定义和单位，再结合 track、peak 和重复一致性判断。
+
+TE-aware 信号增加可能同时来自重复序列保留与背景增加；必须与 standard track、control 和 mappability 一起解释。

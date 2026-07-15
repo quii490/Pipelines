@@ -8,6 +8,8 @@ fail=0
 private_pattern='(/home/[A-Za-z0-9._-]+|/Users/[A-Za-z0-9._-]+|/miniconda3|192\.168\.|10\.[0-9]+\.[0-9]+\.[0-9]+|BEGIN (RSA |OPENSSH )?PRIVATE KEY|github_pat_|ghp_)'
 
 while IFS= read -r -d '' file; do
+  # `git ls-files` also reports tracked files deleted in the current change.
+  [[ -f "$file" ]] || continue
   [[ "$file" == "scripts/validate_public_repo.sh" ]] && continue
 
   if grep -I -n -E "$private_pattern" "$file"; then

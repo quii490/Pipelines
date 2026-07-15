@@ -1,12 +1,9 @@
 # 教程
 
-首版教程使用最小公开/合成数据，按以下顺序执行：
+教程用于学习完整思路；Quick Start 用于尽快跑通。首版先提供不含真实数据的安全练习框架，公开 fixtures 经审查后再补下载命令和预期数值。
 
-1. 下载或生成小型 FASTQ fixture。
-2. 用 pipeline 初始化模式创建输入表。
-3. 人工设置 condition、replicate、contrast/control。
-4. 运行 dry-run/preview 和小规模分析。
-5. 检查 QC、核心输出和失败状态。
-6. 解释一个 primary result 和一个专题结果。
+- [RNA-seq 教程](rnaseq.md)
+- [ATAC-seq 教程](atacseq.md)
+- [CUT&RUN 教程](cutrun.md)
 
-在正式公开测试数据确定前，使用各 pipeline 的 [Quick Start](../index.md)；不得用真实实验数据制作公开教程。
+每个教程都要求保存命令、检查输入、观察运行状态、定位输出、判断基础 QC，并写出“哪些结论当前不能得出”。

@@ -1,5 +1,23 @@
 # 结果解释
 
-建议顺序：运行完整性 → QC → replicate consistency → primary quantification → differential results → enrichment/visualization → TE 或其他专题。
+| 状态 | 维护人 | 最后审查 |
+|---|---|---|
+| Draft | Analysis maintainers | 2026-07-16 |
 
-图形必须能追溯到输入文件、contrast、过滤阈值、normalization 和软件版本。跨工具结果不一致时，先比较 annotation、单位、multi-mapping、duplicate 与 normalization，而不是只选择显著性更强的结果。
+推荐按“运行完整性 → 技术质量 → 样本结构 → 统计结果 → 生物学证据”解释，而不是从最漂亮的图开始。
+
+## 结论证据链
+
+```text
+输入与设计正确
+→ 必需模块成功
+→ QC 可接受且异常已处置
+→ 重复与 contrast 正确
+→ effect size 和 uncertainty 支持
+→ 与 track/region/feature 层证据一致
+→ 独立数据或实验验证
+```
+
+区分“未检测到”“统计功效不足”“模块未运行”“方法不支持”和“证据反对”五种情况。空输出或 skipped module 不是阴性生物学结果。
+
+公开图表必须能回溯到不可变输入、运行命令、代码 commit、结果表和绘图脚本；隐藏真实样本标识时保留内部映射，但不要提交到公开仓库。

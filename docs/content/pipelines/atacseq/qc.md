@@ -2,15 +2,28 @@
 
 | 状态 | 维护人 | 最后审查 | 适用版本 |
 |---|---|---|---|
-| Active | ATAC-seq maintainers | 2026-07-15 | `main` |
+| Draft | ATAC-seq maintainers | 2026-07-16 | `main` |
 
-| 指标 | 判断重点 | 异常时排查 |
+QC 阈值是调查触发器，不是跨物种、细胞类型和实验条件通用的硬门槛。
+
+| 指标 | 看什么 | 异常时优先检查 |
 |---|---|---|
-| Mapping rate | 同批次一致性 | build、污染、read 质量 |
-| Mitochondrial fraction | 是否异常偏高 | 建库质量、细胞状态 |
-| FRiP | signal 是否集中在 peaks | peak 参数、深度、背景 |
-| TSS profile/enrichment | TSS 附近富集形态 | TSS build、Tn5 处理、深度 |
-| Fragment distribution | PE 是否有核小体周期 | layout、insert size、建库 |
-| Replicate correlation | 重复是否一致 | 样本标签、批次、离群样本 |
+| FASTQ quality | base quality、adapter | 测序批次、read trimming |
+| Mapping rate | 与同批样本比较 | 物种/index、污染、read 长度 |
+| Mitochondrial fraction | 线粒体 reads 占比定义一致 | 细胞状态、建库与过滤口径 |
+| Duplicate/library complexity | 可用独立 fragments | 低起始量、PCR、测序过深 |
+| FRiP | fragments in peaks | peak set、背景、peak caller |
+| Fragment-size pattern | nucleosome-free/mono/di | PE 数据、文库质量、深度 |
+| TSS profile | TSS 周围 signal shape | 注释版本、track normalization |
+| Replicate correlation/PCA | 同组是否接近 | 标签、批次、异常样本 |
 
-不要把 profile 曲线数值误写成标准 insertion-site TSS enrichment score。QC 阈值是调查触发器，不是自动删除规则。
+## 评估原则
+
+1. 先确认分母、过滤阶段和 PE/SE 计数单位；
+2. 同一批次、相同 assay 和相似深度下比较；
+3. 结合多个指标，不能用单一 FRiP 或 mapping rate 决定去留；
+4. 排除样本必须记录原因，并分别评估含/不含该样本的结论稳健性。
+
+!!! warning "TSS 指标命名"
+
+    当前 bigWig-based TSS profile 不能直接写成 ENCODE TSS enrichment score。若项目需要该指标，应采用明确的 Tn5 insertion 定义和相应实现。

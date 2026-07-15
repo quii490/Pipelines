@@ -10,6 +10,32 @@ GENOME=""
 MOTIF_MEME=""
 OUTDIR="./tobias"
 CORES=4
+
+usage() {
+  cat <<'USAGE'
+Usage:
+  run_tobias.sh --bam-dir DIR --peaks BED --sample-meta CSV \
+    --genome FASTA --motif-meme FILE [options]
+
+Required:
+  --bam-dir DIR          Directory containing *.clean.bam files.
+  --peaks BED            Consensus/accessibility regions for TOBIAS.
+  --sample-meta CSV      Columns: sample,condition,replicate.
+  --genome FASTA         Reference FASTA matching BAM and peaks.
+  --motif-meme FILE      Motifs in MEME format.
+
+Optional:
+  --contrast-file CSV    Columns: case,control; enables BINDetect.
+  --outdir DIR           Default: ./tobias.
+  --cores INT            Default: 4.
+  -h, --help             Show this help.
+
+The wrapper runs ATACorrect and ScoreBigwig per sample. When a contrast file is
+provided, BINDetect currently chooses the first sample listed for each condition;
+review bindetect_sample_choice.tsv before interpreting differential binding.
+USAGE
+}
+
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --bam-dir) BAM_DIR="$2"; shift 2 ;;
@@ -20,6 +46,7 @@ while [[ $# -gt 0 ]]; do
     --motif-meme) MOTIF_MEME="$2"; shift 2 ;;
     --outdir) OUTDIR="$2"; shift 2 ;;
     --cores) CORES="$2"; shift 2 ;;
+    -h|--help) usage; exit 0 ;;
     *) echo "Unknown argument: $1" >&2; exit 1 ;;
   esac
 done

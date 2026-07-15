@@ -11,7 +11,9 @@ bash pipelines/chipseq_auto_nf/run_auto_chipseq.sh \
   --init-only
 ```
 
-完整文档：<https://quii490.github.io/lab-pipelines/pipelines/cutrun/>
+完整文档：<https://quii490.github.io/Pipelines/pipelines/cutrun/>
+
+> 当前 CUT&RUN pipeline 和文档仍在开发与验证中；请将其视为 Draft，正式项目使用前审查实际代码、manifest、参数和输出。
 
 - 推荐入口：`pipelines/chipseq_auto_nf/run_auto_chipseq.sh`
 - 主流程：`pipelines/chipseq_auto_nf/`

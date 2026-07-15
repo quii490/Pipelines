@@ -27,8 +27,18 @@ jobs:
       - run: pip install -r docs/requirements.txt
       - run: bash scripts/validate_public_repo.sh
       - run: bash scripts/check_cli_docs.sh
+      - run: bash scripts/check_tool_help.sh
       - run: python3 scripts/check_internal_links.py
       - run: mkdocs build --strict -f docs/mkdocs.yml
+      - name: Check Markdown links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress --max-retries 3 --exclude 'http://127.0.0.1' './README.md' './CONTRIBUTING.md' './docs/content/**/*.md'
+          fail: true
+      - name: Scan secrets
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Configure Git credentials
         run: |
           git config user.name github-actions[bot]

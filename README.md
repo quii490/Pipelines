@@ -10,7 +10,7 @@
 | ATAC-seq | `ATAC-seq/run_auto_atacseq.sh` | FASTQ 到 peaks、tracks、QC 与差异分析 |
 | CUT&RUN | `CUTnRUN/pipelines/chipseq_auto_nf/run_auto_chipseq.sh` | CUT&RUN、CUT&Tag、ChIP-seq 标准与 TE 分支 |
 
-完整文档：<https://quii490.github.io/lab-pipelines/>
+完整文档：<https://quii490.github.io/Pipelines/>
 
 本地预览：
 
