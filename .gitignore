@@ -1,0 +1,57 @@
+.DS_Store
+Thumbs.db
+
+# Python and documentation builds
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+docs/site/
+
+# Workflow caches and outputs
+.nextflow/
+work/
+**/work/
+results/
+results*/
+**/_automation/
+*.log
+*.trace
+*.timeline.html
+*.report.html
+
+# Sequencing data and large analysis artifacts
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.bam
+*.bai
+*.cram
+*.crai
+*.bigWig
+*.bw
+*.bedGraph
+*.vcf.gz
+*.tbi
+
+# Local/private configuration
+*.local.config
+*.private.*
+.env
+.env.*
+secrets/
+credentials/
+
+# Local archives and pre-publication documentation retained outside Git
+**/legacy/
+RNA-seq/docs/
+CUTnRUN/docs/
+ATAC-seq/PIPELINE_GUIDE.md
+*-baseline/
+*-predeploy*/
+
+# Explicitly allow tiny public fixtures
+!**/tests/fixtures/**
+!**/tests/fixtures/**/*.gz

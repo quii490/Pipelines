@@ -1,0 +1,26 @@
+name: rnaseq
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.10
+  - star=2.7.11b
+  - hisat2=2.2.1
+  - salmon=1.10.3
+  - subread=2.1.1
+  - stringtie=2.2.3
+  - samtools=1.22.1
+  - fastqc=0.12.1
+  - fastp=1.0.1
+  - bedtools=2.31.1
+  - telescope=1.0.3 
+  - TEcount
+  - docopt
+  - snakemake
+  - picard
+  - bioconductor-rtracklayer
+  - bioconductor-genomicfeatures
+  - r-dplyr
+  - r-tidyverse
+  - bioconductor-deseq2

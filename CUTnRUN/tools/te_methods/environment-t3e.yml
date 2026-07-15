@@ -1,0 +1,13 @@
+name: cutrun-t3e
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.8
+  - numpy=1.19
+  - bedtools
+  - bedops
+  - samtools
+  - r-base=3.6
+  - r-dplyr
+  - r-ggplot2

@@ -1,0 +1,60 @@
+params.salmonte_dir = '/path/to/softwares/SalmonTE-0.4'
+params.salmonte_conda_prefix = '/path/to/.conda/envs/salmonte'
+params.salmonte_ref = 'hs'
+
+process SALMONTE_SAMPLE_PE {
+    tag "$sample"
+    publishDir "${params.outdir}/11_salmonte", mode: 'copy'
+
+    input:
+    tuple val(sample), val(condition), val(replicate), path(r1), path(r2)
+
+    output:
+    path "${sample}_salmonte.done"
+
+    script:
+    """
+    set -euo pipefail
+    mkdir -p ${sample}_salmonte_input
+    ln -sf "$(realpath ${r1})" ${sample}_salmonte_input/${sample}_R1.fastq.gz
+    ln -sf "$(realpath ${r2})" ${sample}_salmonte_input/${sample}_R2.fastq.gz
+
+    bash ${projectDir}/scripts/run_salmonte.sh \
+      --salmonte-dir ${params.salmonte_dir} \
+      --reference ${params.salmonte_ref} \
+      --input-dir ${sample}_salmonte_input \
+      --conda-prefix ${params.salmonte_conda_prefix} \
+      --exprtype count \
+      --outdir ${sample}_SalmonTE_output
+
+    touch ${sample}_salmonte.done
+    """
+}
+
+process SALMONTE_SAMPLE_SE {
+    tag "$sample"
+    publishDir "${params.outdir}/11_salmonte", mode: 'copy'
+
+    input:
+    tuple val(sample), val(condition), val(replicate), path(r1)
+
+    output:
+    path "${sample}_salmonte.done"
+
+    script:
+    """
+    set -euo pipefail
+    mkdir -p ${sample}_salmonte_input
+    ln -sf "$(realpath ${r1})" ${sample}_salmonte_input/${sample}.fastq.gz
+
+    bash ${projectDir}/scripts/run_salmonte.sh \
+      --salmonte-dir ${params.salmonte_dir} \
+      --reference ${params.salmonte_ref} \
+      --input-dir ${sample}_salmonte_input \
+      --conda-prefix ${params.salmonte_conda_prefix} \
+      --exprtype count \
+      --outdir ${sample}_SalmonTE_output
+
+    touch ${sample}_salmonte.done
+    """
+}

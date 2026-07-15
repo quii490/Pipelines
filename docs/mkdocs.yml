@@ -1,0 +1,139 @@
+site_name: Lab Bioinformatics Pipelines
+site_description: RNA-seq、ATAC-seq 与 CUT&RUN/CUT&Tag/ChIP-seq 中文使用文档
+site_url: https://quii490.github.io/lab-pipelines/
+repo_url: https://github.com/quii490/lab-pipelines
+repo_name: quii490/lab-pipelines
+edit_uri: edit/main/docs/content/
+docs_dir: content
+site_dir: site
+use_directory_urls: true
+
+theme:
+  name: material
+  language: zh
+  custom_dir: overrides
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+  palette:
+    - scheme: default
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: 切换到深色模式
+    - scheme: slate
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: 切换到浅色模式
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+
+nav:
+  - 首页: index.md
+  - 入门指南:
+      - getting-started/index.md
+      - 系统与安装: getting-started/installation.md
+      - 通用运行流程: getting-started/common-workflow.md
+      - 命名与目录: getting-started/naming.md
+      - 参考基因组: getting-started/references.md
+      - 数据安全: getting-started/security.md
+  - Pipelines:
+      - RNA-seq:
+          - pipelines/rnaseq/index.md
+          - Quick Start: pipelines/rnaseq/quick-start.md
+          - 输入准备: pipelines/rnaseq/input.md
+          - 运行: pipelines/rnaseq/running.md
+          - 参数: pipelines/rnaseq/parameters.md
+          - Workflow: pipelines/rnaseq/workflow.md
+          - 输出: pipelines/rnaseq/outputs.md
+          - QC: pipelines/rnaseq/qc.md
+          - 下游与 TE: pipelines/rnaseq/downstream.md
+          - 故障排查: pipelines/rnaseq/troubleshooting.md
+      - ATAC-seq:
+          - pipelines/atacseq/index.md
+          - Quick Start: pipelines/atacseq/quick-start.md
+          - 输入准备: pipelines/atacseq/input.md
+          - 运行: pipelines/atacseq/running.md
+          - 参数: pipelines/atacseq/parameters.md
+          - Workflow: pipelines/atacseq/workflow.md
+          - 输出: pipelines/atacseq/outputs.md
+          - QC: pipelines/atacseq/qc.md
+          - 下游与 TE: pipelines/atacseq/downstream.md
+          - 故障排查: pipelines/atacseq/troubleshooting.md
+      - CUT&RUN / CUT&Tag / ChIP-seq:
+          - pipelines/cutrun/index.md
+          - Quick Start: pipelines/cutrun/quick-start.md
+          - 输入准备: pipelines/cutrun/input.md
+          - 运行: pipelines/cutrun/running.md
+          - 参数: pipelines/cutrun/parameters.md
+          - Workflow: pipelines/cutrun/workflow.md
+          - 输出: pipelines/cutrun/outputs.md
+          - QC: pipelines/cutrun/qc.md
+          - 下游与 TE: pipelines/cutrun/downstream.md
+          - 故障排查: pipelines/cutrun/troubleshooting.md
+  - 工具与脚本:
+      - tools/index.md
+      - RNA-seq 工具: tools/rnaseq.md
+      - ATAC-seq 工具: tools/atacseq.md
+      - CUT&RUN 工具: tools/cutrun.md
+  - 专题:
+      - topics/index.md
+      - TE 分析: topics/te-analysis.md
+      - 差异分析与可视化: topics/differential-analysis.md
+      - QC 原理与阈值: topics/qc.md
+      - 结果解释: topics/results-interpretation.md
+  - 参考手册:
+      - reference/index.md
+      - Samplesheet / Manifest: reference/input-formats.md
+      - CLI 参数: reference/cli.md
+      - 配置与环境变量: reference/configuration.md
+      - 输出文件: reference/outputs.md
+      - 术语表: reference/glossary.md
+  - 教程: tutorials/index.md
+  - 故障排查: troubleshooting/index.md
+  - 维护:
+      - maintenance/index.md
+      - 更新记录: maintenance/changelog.md
+      - 页面模板: page-templates/sop.md
+      - 工具模板: page-templates/tool.md

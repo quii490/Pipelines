@@ -1,0 +1,16 @@
+name: salmonte
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python
+  - pip
+  - snakemake
+  - pandas
+  - docopt
+  - r-base
+  - salmon=0.8.2
+  - samtools
+  - pip:
+      - stopit

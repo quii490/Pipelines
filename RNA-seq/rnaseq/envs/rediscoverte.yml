@@ -1,0 +1,19 @@
+name: rediscoverte
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - salmon=1.10.3
+  - r-base=4.2.2
+  - r-optparse
+  - r-data.table
+  - r-readr
+  - r-dplyr
+  - r-tibble
+  - bioconductor-edger
+  - bioconductor-biobase
+  - bioconductor-edaseq
+  - bioconductor-biomart
+  - tecount

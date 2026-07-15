@@ -1,0 +1,113 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+resolve_script_dir() {
+  local src="${BASH_SOURCE[0]}"
+  while [[ -L "$src" ]]; do
+    local dir
+    dir="$(cd -P "$(dirname "$src")" && pwd)"
+    src="$(readlink "$src")"
+    [[ "$src" != /* ]] && src="$dir/$src"
+  done
+  cd -P "$(dirname "$src")" && pwd
+}
+
+SCRIPT_DIR="$(resolve_script_dir)"
+ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+
+usage() {
+  cat <<'USAGE'
+ATAC-seq unified command
+
+Recommended:
+  atacseq run --fastq-dir FASTQ_DIR --species hg38 --outdir RESULTS \
+    --metadata-csv metadata.csv --contrast KO,WT --preset standard
+
+Subcommands:
+  run            FASTQ -> BAM/bigWig/peaks/counts/downstream/QC report
+  init           Only create samplesheet and contrasts template
+  pipeline       Run Nextflow from an existing samplesheet
+  from-bam       Rebuild analysis from existing clean BAM files
+  downstream     Re-run edgeR/annotation/TE/gene pathway from existing counts
+  callpeak       Call peaks from existing BAM files
+  annotate       Annotate a peak BED to genes and TE
+  heatmap        Draw heatmap/profile for any BED regions and bigWig files
+  te             Draw TE heatmap batch from existing bigWig/peaks
+  te-tracks      Build TE/L1 relaxed BAM and bigWig tracks from existing BAMs
+  tss            Re-draw TSS accessibility profile from bigWig
+  gene-body      Re-draw gene body accessibility profile from bigWig
+  motif          Run HOMER motif enrichment from contrast BEDs
+  footprint      Run TOBIAS footprinting
+  nuc            Run nucleosome phasing/NRL from BAM files
+  report         Rebuild Chinese QC_REPORT.md from an existing result directory
+  help           Show this help
+
+Notes:
+  - Use "run" for normal users.
+  - Use subcommands for parameter tuning from intermediate results.
+  - All original scripts remain available under scripts/.
+USAGE
+}
+
+cmd="${1:-help}"
+if [[ $# -gt 0 ]]; then shift; fi
+
+case "$cmd" in
+  run)
+    exec bash "$ROOT_DIR/run_auto_atacseq.sh" "$@"
+    ;;
+  init)
+    exec bash "$ROOT_DIR/run_auto_atacseq.sh" --init-only "$@"
+    ;;
+  pipeline)
+    exec bash "$ROOT_DIR/run_pipeline.sh" "$@"
+    ;;
+  from-bam)
+    exec bash "$SCRIPT_DIR/run_atac_from_bam.sh" "$@"
+    ;;
+  downstream)
+    exec bash "$SCRIPT_DIR/run_atac_downstream_only.sh" "$@"
+    ;;
+  callpeak)
+    exec bash "$SCRIPT_DIR/run_callpeak_from_bam.sh" "$@"
+    ;;
+  annotate)
+    exec bash "$SCRIPT_DIR/run_peak_annotation.sh" "$@"
+    ;;
+  heatmap|region-heatmap)
+    exec bash "$SCRIPT_DIR/run_region_heatmap.sh" "$@"
+    ;;
+  te|te-heatmap)
+    exec bash "$SCRIPT_DIR/run_te_heatmap_batch.sh" "$@"
+    ;;
+  te-tracks|te-relaxed)
+    exec bash "$SCRIPT_DIR/run_atac_te_tracks_from_bam.sh" "$@"
+    ;;
+  tss)
+    exec bash "$SCRIPT_DIR/run_tss_qc.sh" "$@"
+    ;;
+  gene-body)
+    exec bash "$SCRIPT_DIR/run_gene_body_profile.sh" "$@"
+    ;;
+  motif)
+    exec bash "$SCRIPT_DIR/run_motif_homer.sh" "$@"
+    ;;
+  footprint|footprinting)
+    exec bash "$SCRIPT_DIR/run_tobias.sh" "$@"
+    ;;
+  nuc|nuc-phasing)
+    exec bash "$SCRIPT_DIR/run_nuc_phasing.sh" "$@"
+    ;;
+  report)
+    exec python3 "$SCRIPT_DIR/generate_qc_report.py" "$@"
+    ;;
+  help|-h|--help)
+    usage
+    ;;
+  *)
+    echo "Unknown subcommand: $cmd" >&2
+    usage >&2
+    exit 1
+    ;;
+esac
+

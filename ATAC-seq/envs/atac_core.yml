@@ -1,0 +1,36 @@
+name: atac_core
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.10
+  - nextflow
+  - fastp
+  - bowtie2
+  - samtools
+  - bedtools
+  - picard
+  - macs3
+  - subread
+  - deeptools
+  - ucsc-bedgraphtobigwig
+  - homer
+  - tobias
+  - r-base=4.3
+  - r-tidyverse
+  - r-pheatmap
+  - r-optparse
+  - r-ggrepel
+  - bioconductor-edger
+  - bioconductor-genomicranges
+  - bioconductor-rtracklayer
+  - bioconductor-chipseeker
+  - bioconductor-clusterprofiler
+  - bioconductor-org.hs.eg.db
+  - bioconductor-org.mm.eg.db
+  - bioconductor-txdb.hsapiens.ucsc.hg38.knowngene
+  - bioconductor-txdb.mmusculus.ucsc.mm10.knowngene
+
+  - bioconductor-genomicfeatures
+  - bioconductor-rsamtools

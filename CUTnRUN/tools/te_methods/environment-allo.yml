@@ -1,0 +1,10 @@
+name: cutrun-allo
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python>=3.10
+  - allo=1.2.0
+  - tensorflow>=2.11
+  - pysam
+  - joblib

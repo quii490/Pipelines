@@ -1,0 +1,5 @@
+sample,species,assay,group,replicate,igg,is_igg,layout,fastq_1,fastq_2
+TargetA,hg38,cutrun,A,1,IgG_A,false,PE,/tmp/A_R1.fastq.gz,/tmp/A_R2.fastq.gz
+IgG_A,hg38,cutrun,controlA,1,,true,PE,/tmp/IA_R1.fastq.gz,/tmp/IA_R2.fastq.gz
+TargetB,hg38,cutrun,B,1,IgG_B,false,PE,/tmp/B_R1.fastq.gz,/tmp/B_R2.fastq.gz
+IgG_B,hg38,cutrun,controlB,1,,true,PE,/tmp/IB_R1.fastq.gz,/tmp/IB_R2.fastq.gz

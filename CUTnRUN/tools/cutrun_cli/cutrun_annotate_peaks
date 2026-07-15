@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+self="$(readlink -f "$0")"
+script_dir="$(dirname "$self")"
+backend="${PEAK_ANNOTATOR:-chipseeker}"
+
+case "$backend" in
+  chipseeker)
+    target="${script_dir}/cutrun_annotate_peaks_chipseeker.R"
+    ;;
+  chippeakanno)
+    target="${script_dir}/cutrun_annotate_peaks_chippeakanno.R"
+    ;;
+  *)
+    echo "ERROR: PEAK_ANNOTATOR must be chipseeker (default) or chippeakanno" >&2
+    exit 2
+    ;;
+esac
+
+rscript="${RSCRIPT:-}"
+if [[ -z "$rscript" ]]; then
+  for candidate in \
+    "${DOWNSTREAM_BIN:-}/Rscript" \
+    "${HOME}/.conda/envs/downstream/bin/Rscript" \
+    "/path/to/.conda/envs/downstream/bin/Rscript"; do
+    if [[ -x "$candidate" ]]; then
+      rscript="$candidate"
+      break
+    fi
+  done
+fi
+if [[ -z "$rscript" ]]; then
+  rscript="$(command -v Rscript || true)"
+fi
+[[ -x "$rscript" ]] || {
+  echo "ERROR: Rscript not found; activate the downstream/chipseq environment or set RSCRIPT=/path/to/Rscript" >&2
+  exit 127
+}
+
+exec "$rscript" "$target" "$@"

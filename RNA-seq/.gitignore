@@ -1,0 +1,62 @@
+# Runtime and workflow state
+.nextflow/
+work/
+*.trace.tsv
+*.report.html
+*.timeline.html
+*.dag.html
+.snakemake/
+
+# Local environments and caches
+.conda_cache/
+__pycache__/
+*.py[cod]
+.Rhistory
+.RData
+.Rproj.user/
+
+# Generated analysis outputs
+plots/
+plots_*/
+results/
+*_results/
+_automation/
+fastq/
+download/
+downloads/
+
+# Backups, old versions, and scratch files
+*.bak
+*.bak_*
+*_v[0-9].R
+*_v[0-9][0-9].R
+*_patched_v*.ipynb
+*.tmp
+*.swp
+*~
+
+# Large sequencing/alignment/count artifacts
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.bam
+*.bai
+*.sam
+*.cram
+*.crai
+*.bigWig
+*.bw
+*.gtf
+*.gff
+*.gff3
+*.fa
+*.fasta
+*.fai
+*.2bit
+
+# macOS/editor noise
+.DS_Store
+._*
+.idea/
+.vscode/
