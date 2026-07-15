@@ -16,7 +16,7 @@ for entry in "${entries[@]}"; do
 done
 
 for flag in --fastq-dir --species --outdir --resume; do
-  rg -q --fixed-strings -- "$flag" docs/content/pipelines docs/content/reference/cli.md || {
+  grep -R -F -q -- "$flag" docs/content/pipelines docs/content/reference/cli.md || {
     echo "ERROR: required documented flag missing: $flag" >&2
     exit 1
   }
