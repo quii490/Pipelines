@@ -12,6 +12,6 @@
 | CUT&RUN | Draft / under development | 当前代码、新手 SOP、输出和故障手册 | pipeline 未稳定；接口、默认值和结果继续验证 |
 | 工具与脚本 | Draft review | 各工具 README、源码和 `--help` | 用真实小数据验证每个示例 |
 | 跨流程专题 | Draft review | 三套流程的共同定义 | 实验室推荐值和解释底线 |
-| 教程 | Draft review | 场景化通用示例 | 增加公开 fixtures 和稳定预期结果 |
+| 实用技巧 | Draft review | 集群、Slurm、Shell、AI 协作和交付习惯 | 按实验室内部政策补充非公开配置 |
 
-当前完善优先级为 RNA-seq → ATAC-seq → 入门/工具/专题/教程；CUT&RUN 等代码稳定后再完成最终科学验收。页面只有经过技术检查、真实小数据运行和实验室科学审核后才从 Draft 转为 Active。
+当前完善优先级为 RNA-seq → ATAC-seq → 入门/工具/专题/实用技巧；CUT&RUN 等代码稳定后再完成最终科学验收。维护文件和页面模板仅保留在仓库，不进入公开站点。页面只有经过技术检查、真实小数据运行和实验室科学审核后才从 Draft 转为 Active。

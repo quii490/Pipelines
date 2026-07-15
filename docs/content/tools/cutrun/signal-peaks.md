@@ -61,8 +61,8 @@ python3 CUTnRUN/tools/cutrun_cli/cutrun_consensus_peaks.py \
 
 ```bash
 python3 CUTnRUN/tools/cutrun_cli/cutrun_peak_overlap.py \
-  --peak /path/to/A.narrowPeak \
-  --peak /path/to/B.narrowPeak \
+  --peak A=/path/to/A.narrowPeak \
+  --peak B=/path/to/B.narrowPeak \
   --out-dir /path/to/peak_overlap
 ```
 
@@ -82,4 +82,4 @@ bash CUTnRUN/tools/cutrun_cli/cutrun_homer.sh \
 
 ## Peak annotation
 
-主 downstream 默认使用 ChIPseeker。`cutrun_annotate_peaks` 需要对应 R 包与正确 GTF/TxDb。最近基因仅是注释规则，不等于功能靶基因；报告 annotation backend、genome build 和 promoter 定义。
+主 downstream 默认使用 ChIPseeker。完整参数、backend 切换、TE filtering 与通路命令见[注释、overlap 与通路](annotation-enrichment.md)。`cutrun_annotate_peaks` 需要对应 R 包与正确 GTF/TxDb。最近基因仅是注释规则，不等于功能靶基因；报告 annotation backend、genome build 和 promoter 定义。

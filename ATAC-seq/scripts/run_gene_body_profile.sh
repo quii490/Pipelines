@@ -15,6 +15,27 @@ CORES=4
 UP=3000
 DOWN=3000
 BODY_LEN=5000
+usage() {
+  cat <<'USAGE'
+Usage:
+  run_gene_body_profile.sh --bw-glob "04_bw/*.bw" [options]
+
+Purpose:
+  Draw deepTools scale-regions profiles and heatmaps across gene bodies.
+  Genes of different lengths are scaled to the same display length.
+
+Options:
+  --bw-glob STR       Quoted bigWig glob (required).
+  --gene-bed FILE     Six-column gene-body BED; otherwise use species config.
+  --species STR       hg38 | mm10 | mm39. Default: hg38.
+  --outdir DIR        Default: ./gene_body_profile.
+  --cores INT         Default: 4.
+  --upstream INT      Bases before gene body. Default: 3000.
+  --downstream INT    Bases after gene body. Default: 3000.
+  --body-length INT   Scaled display length. Default: 5000.
+  -h, --help          Show this help.
+USAGE
+}
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --bw-glob) BW_GLOB="$2"; shift 2 ;;
@@ -25,6 +46,7 @@ while [[ $# -gt 0 ]]; do
     --upstream) UP="$2"; shift 2 ;;
     --downstream) DOWN="$2"; shift 2 ;;
     --body-length) BODY_LEN="$2"; shift 2 ;;
+    -h|--help) usage; exit 0 ;;
     *) echo "Unknown argument: $1" >&2; exit 1 ;;
   esac
 done

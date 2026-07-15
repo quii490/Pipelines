@@ -48,6 +48,8 @@ python3 CUTnRUN/tools/cutrun_cli/cutrun_results_summary.py \
 
 用于找缺失/空文件，不替代科学 QC。
 
+需要在提交作业前检查 manifest/reference/空间时，使用[Preflight、状态与完整性](validation-status.md)，不要等到 alignment 后才发现 FASTQ 或 control mapping 错误。
+
 ## 可复现 run manifest
 
 ```bash
@@ -58,7 +60,7 @@ python3 CUTnRUN/tools/cutrun_cli/cutrun_run_manifest.py \
   --output /path/to/results/09_downstream/run_manifest.json
 ```
 
-大型文件默认记录 size、mtime 和 streaming fingerprint；`--hash-large` 会显著增加 I/O，仅在归档政策要求完整 hash 时使用。
+可用 `--run-id` 绑定一次 downstream attempt。大型文件默认记录 size、mtime 和 streaming fingerprint；`--hash-large` 会显著增加 I/O，仅在归档政策要求完整 hash 时使用。reference/config 文件仍应完整 SHA256。
 
 ## 重建报告
 

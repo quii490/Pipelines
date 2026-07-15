@@ -44,10 +44,13 @@ bash ATAC-seq/scripts/run_peak_annotation.sh \
 
 bash ATAC-seq/scripts/run_peak_overlap.sh \
   --peaks "A=/path/to/A.bed B=/path/to/B.bed" \
-  --outdir /path/to/overlap
+  --outdir /path/to/overlap \
+  --distance 0
 ```
 
-最近基因注释不等于该基因是功能靶点。Overlap 受 peak width、caller、threshold 和 universe 影响；同时报告交集数量、各自比例和采用的 overlap 定义。
+Peak annotation 还可设置 `--gtf`、`--te-bed`、`--promoter-up`、`--promoter-down`、`--txdb-cache` 和 `--no-plots`。最近基因注释不等于该基因是功能靶点。
+
+Overlap 也可用 `--peak-dir /path/to/peaks` 自动扫描 BED/narrowPeak/broadPeak；`--distance` 会先合并相距不超过该距离的 intervals，`--top-n` 只保留每个输入前 N 行。两者都会改变结果，必须记录。Overlap 受 peak width、caller、threshold 和 universe 影响；同时报告交集数量、各自比例和采用的 overlap 定义。
 
 ## HOMER motif
 
@@ -61,6 +64,8 @@ bash ATAC-seq/scripts/run_motif_homer.sh \
 ```
 
 motif enrichment 是序列富集证据，不证明该 TF 在本实验中直接结合。background regions 的长度、GC 和可及性会影响结果。
+
+`--bed-dir` 支持组织后的 `<contrast>.up.bed/.down.bed` 和 legacy `<contrast>/up.bed` 结构。`--size 200` 表示以 peak center 为中心的窗口；`--run-annotation false` 可跳过 `annotatePeaks.pl`，但不会改变 motif discovery 输入。
 
 ## TOBIAS footprinting
 

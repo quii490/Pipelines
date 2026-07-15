@@ -65,8 +65,7 @@ bash ATAC-seq/scripts/run_te_heatmap.sh \
   --upstream 2000 \
   --downstream 2000 \
   --body-length 5500 \
-  --skip-zeros false \
-  --sort-regions keep \
+  --max-regions 5000 \
   --cores 16
 ```
 
@@ -82,15 +81,15 @@ bash ATAC-seq/scripts/run_te_heatmap_batch.sh \
   --contrast-bed-glob "/path/to/contrast_beds/*/*.bed" \
   --outdir /path/to/te_heatmap_batch \
   --max-regions 5000 \
-  --skip-zeros false \
-  --sort-regions keep \
   --cores 16
 ```
 
+批量 wrapper 支持 `--te-class-filter`、`--te-family-filter`、`--te-name-filter`。至少提供 `--global-peak-bed` 或 `--contrast-bed-glob`；global 与 contrast 输出分目录保存。
+
 ## 解释底线
 
-- `skipZeros=true` 会按结果删除无信号元素，可能夸大平均曲线；
-- `missingDataAsZero` 与真正测得 0 不同；
-- 按 anchor track 排序后展示同一 anchor 会强化视觉梯度；
+- 当前 `run_te_heatmap.sh` 内部使用 `computeMatrix scale-regions --skipZeros`，命令行没有关闭开关；无信号元素会被删除，可能夸大平均曲线；
+- 当前 wrapper 没有 `missingDataAsZero` 或 `sort-regions` 参数，不要从其他 deepTools wrapper 复制这些选项；
+- 输出按内部信号规则排序，展示同一排序 track 时会强化视觉梯度；
 - relaxed track 不做 EM/fractional assignment，不能自动定位唯一 TE locus；
 - 必须报告 annotation、MAPQ、flags、duplicates、normalization、bin size 和 region selection。

@@ -47,11 +47,34 @@ bash ATAC-seq/scripts/run_atac_from_bam.sh \
 --run-diff-peak-heatmap true
 ```
 
-输入 BAM 建议为 coordinate-sorted `*.clean.bam` + `.bai`。如果 BAM 已经去掉 multi-mappers，`--run-te-relaxed-tracks true` 仍需要额外提供 pre-clean BAM：
+输入 BAM 建议为 coordinate-sorted `*.clean.bam` + `.bai`。当前 `run_atac_from_bam.sh` **没有** `--run-te-relaxed-tracks` 或 `--te-source-bam-glob` 参数。clean BAM 已去掉的 multi-mappers 无法恢复；需要 relaxed track 时另行运行：
 
 ```bash
---te-source-bam-glob "/path/to/02_align/*.sorted.bam"
+bash ATAC-seq/scripts/run_atac_te_tracks_from_bam.sh \
+  --bam-glob "/path/to/02_align/*.sorted.bam" \
+  --outdir /path/to/te_tracks \
+  --species hg38 --mapq 0 --cores 16
 ```
+
+### 分析开关
+
+这些开关均接受 `true`/`false`：
+
+| 参数 | 模块 | 前置条件 |
+|---|---|---|
+| `--run-bamcoverage` | clean BAM → standard bigWig | `bamCoverage` |
+| `--run-tss` | TSS aggregate profile | TSS BED、bigWig |
+| `--run-gene-body` | gene-body profile | gene-body BED、bigWig |
+| `--run-te-heatmap` | standard track 上的 TE aggregate | TE BED、bigWig；不是 relaxed branch |
+| `--run-motif` | HOMER | motif genome 与 contrast BED |
+| `--run-tobias` | footprinting | FASTA、MEME motif、BAM、peaks |
+| `--run-nuc-phasing` | fragment/NRL | PE BAM |
+| `--run-fixedbin` | fixed-bin counts/DE | chrom sizes、metadata、contrasts |
+| `--run-bw-correlation` | bigWig correlation/PCA | 至少两个同策略 tracks |
+| `--run-diff-peak-heatmap` | differential peak signal | contrast BED、bigWig |
+| `--run-consensus-annotation` | consensus peak gene/TE annotation | GTF、可选 TE BED |
+
+一次只增加少量可选模块。若全部打开，先确认 HOMER、TOBIAS、deepTools、R/Bioconductor 和参考文件都齐全，否则很难区分是核心重建失败还是可选工具缺失。
 
 ## 只重新 call peaks
 
@@ -64,6 +87,8 @@ bash ATAC-seq/scripts/run_callpeak_from_bam.sh \
   --qvalue 0.05 \
   --cores 8
 ```
+
+PE 数据通常让 `--format auto` 检测并使用 `BAMPE`；只有确认 BAM layout 时才强制格式。SE 的 `--shift -100 --extsize 200` 是常见 ATAC 模型，不能用于 PE fragment calling。`--pvalue` 一旦设置会覆盖 `--qvalue`。`--broad` 适合特殊探索，不是普通 ATAC 的默认选择。
 
 调用前确认 BAM 是否已经 Tn5 shift、duplicate/blacklist/MAPQ 如何处理。不同 peak 参数生成的新 peak set 不应覆盖旧目录。peak 数量增加不自动表示质量提高。
 
@@ -81,3 +106,5 @@ bash ATAC-seq/scripts/run_fixedbin_from_bam.sh \
 ```
 
 Fixed bins 不依赖 peak calling，适合发现分散变化；代价是 feature 数量大、multiple testing 更重。bin size 改变分辨率、稀疏度和计算量，比较项目时必须一致。
+
+常用 `--bin-size` 试验可从 50–100 kb 开始；不要在同一结论中挑选多个 bin size 里最显著的一套而不报告多重尝试。

@@ -36,11 +36,13 @@ bash ATAC-seq/scripts/run_gene_body_profile.sh \
 ```bash
 bash ATAC-seq/scripts/run_bw_correlation.sh \
   --bw-glob "/path/to/04_bw/*.bw" \
-  --outdir /path/to/qc/bw_correlation \
-  --cores 8
+  --out-prefix /path/to/qc/bw_correlation/standard \
+  --bin-size 10000 \
+  --cor-method pearson \
+  --threads 8
 ```
 
-只比较同一 assembly、normalization、bin size 和过滤策略的 tracks。相关性高表示全局形状相似，不证明 peak-level 变化不存在，也不替代 biological replicates。
+`--bw-dir DIR` 可替代 `--bw-glob`。输出 `.npz`、raw bins、correlation matrix、heatmap、scatter 和 PCA。只比较同一 assembly、normalization、bin size 和过滤策略的 tracks。相关性高表示全局形状相似，不证明 peak-level 变化不存在，也不替代 biological replicates。
 
 ## Nucleosome phasing
 
@@ -52,6 +54,18 @@ bash ATAC-seq/scripts/run_nuc_phasing.sh \
 ```
 
 主要用于 PE fragment lengths。SE 数据或深度不足时应报告不适用/NA，而不是用 read length 代替 fragment distribution。
+
+常用参数包括 `--mapq 30`、`--max-frag 1000`、`--labels WT_1,WT_2,KO_1,KO_2`；`--lspan` 与 `--rspan` 控制平滑拟合，只应在查看原始 fragment distribution 后调整。也可用 `--bam FILE` 或 `--bam-list FILE` 代替 glob。
+
+## TSS 与 gene body 参数速查
+
+| 工具 | 关键参数 | 默认 |
+|---|---|---:|
+| `run_tss_qc.sh` | `--upstream`、`--downstream` | 3000/3000 bp |
+| `run_gene_body_profile.sh` | `--upstream`、`--downstream`、`--body-length` | 3000/3000/5000 bp |
+| 两者 | `--species`、显式 BED、`--cores` | `hg38`、config、4 |
+
+`run_tss_qc.sh` 会启用 `--skipZeros`；因此不同 track 的结果解释要考虑被删除的零信号 regions。gene body 使用 `scale-regions`，横轴中段是相对位置。
 
 ## 常见空图原因
 

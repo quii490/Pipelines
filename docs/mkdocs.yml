@@ -7,6 +7,9 @@ edit_uri: edit/main/docs/content/
 docs_dir: content
 site_dir: site
 use_directory_urls: true
+exclude_docs: |
+  maintenance/
+  page-templates/
 
 theme:
   name: material
@@ -127,14 +130,18 @@ nav:
           - QC、报告、清理与交付: tools/rnaseq/operations.md
       - ATAC-seq 工具:
           - tools/atacseq/index.md
+          - 统一入口与完整清单: tools/atacseq/command-reference.md
           - 重建与补跑: tools/atacseq/rebuild.md
           - 信号与 QC: tools/atacseq/signal-qc.md
           - 区域、注释与 motif: tools/atacseq/regions-motif.md
+          - 报告、汇总与跨对比: tools/atacseq/reporting-comparison.md
           - TE / L1 工具: tools/atacseq/te.md
       - CUT&RUN 工具:
           - tools/cutrun/index.md
+          - Preflight、状态与完整性: tools/cutrun/validation-status.md
           - 恢复、状态与报告: tools/cutrun/recovery-report.md
           - 信号、peaks 与 annotation: tools/cutrun/signal-peaks.md
+          - 注释、overlap 与通路: tools/cutrun/annotation-enrichment.md
           - TE 工具与外部方法: tools/cutrun/te-methods.md
   - 专题:
       - topics/index.md
@@ -153,16 +160,11 @@ nav:
       - 配置与环境变量: reference/configuration.md
       - 输出文件: reference/outputs.md
       - 术语表: reference/glossary.md
-  - 教程:
-      - tutorials/index.md
-      - RNA-seq: tutorials/rnaseq.md
-      - ATAC-seq: tutorials/atacseq.md
-      - CUT&RUN: tutorials/cutrun.md
+  - 实用技巧:
+      - tips/index.md
+      - 登录和使用计算集群: tips/cluster-login.md
+      - Slurm、后台任务与资源: tips/cluster-jobs.md
+      - Shell、日志与文件传输: tips/shell-productivity.md
+      - 使用 AI 辅助生信工作: tips/ai-assisted-work.md
+      - 分析记录与交付习惯: tips/analysis-habits.md
   - 故障排查: troubleshooting/index.md
-  - 维护:
-      - maintenance/index.md
-      - 自己维护文档: maintenance/editing-guide.md
-      - 内容状态: maintenance/content-status.md
-      - 更新记录: maintenance/changelog.md
-      - 页面模板: page-templates/sop.md
-      - 工具模板: page-templates/tool.md

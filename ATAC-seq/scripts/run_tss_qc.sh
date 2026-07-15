@@ -14,6 +14,26 @@ OUTDIR="./tss_qc"
 CORES=4
 UP=3000
 DOWN=3000
+usage() {
+  cat <<'USAGE'
+Usage:
+  run_tss_qc.sh --bw-glob "04_bw/*.bw" [options]
+
+Purpose:
+  Draw a deepTools aggregate TSS signal profile and heatmap from existing
+  bigWig tracks. This is not the insertion-based ENCODE TSS enrichment score.
+
+Options:
+  --bw-glob STR       Quoted bigWig glob (required).
+  --tss-bed FILE      TSS BED; otherwise resolved from species config.
+  --species STR       hg38 | mm10 | mm39. Default: hg38.
+  --outdir DIR        Default: ./tss_qc.
+  --cores INT         Default: 4.
+  --upstream INT      Bases before TSS. Default: 3000.
+  --downstream INT    Bases after TSS. Default: 3000.
+  -h, --help          Show this help.
+USAGE
+}
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --bw-glob) BW_GLOB="$2"; shift 2 ;;
@@ -23,6 +43,7 @@ while [[ $# -gt 0 ]]; do
     --cores) CORES="$2"; shift 2 ;;
     --upstream) UP="$2"; shift 2 ;;
     --downstream) DOWN="$2"; shift 2 ;;
+    -h|--help) usage; exit 0 ;;
     *) echo "Unknown argument: $1" >&2; exit 1 ;;
   esac
 done

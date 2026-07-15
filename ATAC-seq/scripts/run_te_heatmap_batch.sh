@@ -19,6 +19,34 @@ TE_LABEL_LEVEL="locus"
 TE_CLASS_FILTER=""
 TE_FAMILY_FILTER=""
 TE_NAME_FILTER=""
+usage() {
+  cat <<'USAGE'
+Usage:
+  run_te_heatmap_batch.sh --bw-glob "04_bw_te/*.bw" [options]
+
+Purpose:
+  Run global and/or contrast-specific TE heatmaps by repeatedly calling
+  run_te_heatmap.sh with one shared annotation and filtering policy.
+
+Options:
+  --bw-glob STR             Quoted bigWig glob (required).
+  --te-bed FILE             TE BED/GTF; otherwise use species config.
+  --species STR             hg38 | mm10 | mm39. Default: hg38.
+  --global-peak-bed FILE    Consensus/global accessible peak BED.
+  --contrast-bed-glob STR   Quoted glob of differential peak BED files.
+  --outdir DIR              Default: ./te_heatmap_batch.
+  --cores INT               Default: 4.
+  --max-regions INT         Default: 5000.
+  --mode STR                Passed through for compatibility.
+  --te-label-level STR      Passed through for compatibility.
+  --te-class-filter STR     Filter TE annotation/name field.
+  --te-family-filter STR    Filter TE annotation/name field.
+  --te-name-filter STR      Filter TE annotation/name field.
+  -h, --help                Show this help.
+
+At least one of --global-peak-bed or --contrast-bed-glob should be supplied.
+USAGE
+}
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --bw-glob) BW_GLOB="$2"; shift 2 ;;
@@ -34,6 +62,7 @@ while [[ $# -gt 0 ]]; do
     --te-class-filter) TE_CLASS_FILTER="$2"; shift 2 ;;
     --te-family-filter) TE_FAMILY_FILTER="$2"; shift 2 ;;
     --te-name-filter) TE_NAME_FILTER="$2"; shift 2 ;;
+    -h|--help) usage; exit 0 ;;
     *) echo "Unknown argument: $1" >&2; exit 1 ;;
   esac
 done
