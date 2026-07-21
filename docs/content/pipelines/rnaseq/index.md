@@ -1,24 +1,16 @@
 # RNA-seq Pipeline
-
-| 状态 | 维护人 | 最后审查 | 适用版本 |
-|---|---|---|---|
-| Draft | RNA-seq maintainers | 2026-07-16 | `main` / `run_auto_rnaseq.sh` |
-
 本流程面向常规 bulk RNA-seq，从本地 FASTQ 或 accession manifest 开始，完成 reads 质控、gene alignment/quantification、多个 TE quantification 分支、MultiQC、差异表达、GSEA 和标准图形。推荐入口是：
 
 ```text
-RNA-seq/rnaseq/run_auto_rnaseq.sh
+/home/machicheng/RNA-seq/Pipeline/rnaseq/rnaseq/run_auto_rnaseq.sh
 ```
-
 ## 适用范围
-
 - Illumina bulk RNA-seq，支持 PE/SE 自动识别。
-- 人类 `hg38`，并可选择 T2T/CHM13 reference；小鼠 `mm10`、`mm39`。
-- 有 biological replicates 的 gene/TE differential expression。
+- 人类 `hg38`；小鼠 `mm10`、`mm39`。
+- 有/无 biological replicates 的 gene/TE differential expression。
 - 从已有 BAM、count matrix、DE matrix 或 bigWig 补做分析。
 
 不适用于 single-cell、spatial、small RNA、long-read 或 allele-specific RNA-seq。没有 biological replicate 时只能做明确标注的探索性 effect-size 分析。
-
 ## 数据流
 
 ```mermaid
@@ -35,12 +27,10 @@ flowchart LR
 ```
 
 ## 默认方法边界
-
 - 普通 counts 不默认使用 duplicate-removed BAM；duplicate metrics 用于 QC。
 - TE 工具对 multi-mapping reads、annotation 层级和输出单位的处理不同，不能直接互换。
 - REdiscoverTE 默认只在人类 `hg38` 运行；其他物种或 reference 需要先确认资源支持。
 - `condition.csv` 和 `contrast.csv` 必须人工核对，自动生成的内容只是模板。
-
 ## 从哪里开始
 
 - 第一次运行：[Quick Start](quick-start.md)

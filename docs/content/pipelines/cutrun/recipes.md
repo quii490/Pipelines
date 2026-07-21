@@ -1,9 +1,4 @@
 # CUT&RUN：按现有文件选择入口
-
-| 状态 | 维护人 | 最后审查 |
-|---|---|---|
-| Draft review | CUT&RUN maintainers | 2026-07-16 |
-
 ## 我有 FASTQ
 
 按 [Quick Start](quick-start.md) 生成 manifest、preview 并运行 `run_auto_chipseq.sh --run-downstream`。
@@ -34,6 +29,12 @@ bash CUTnRUN/tools/cutrun_cli/cutrun_call_peaks_published.sh \
 ## 已有 counts，只想重画 gene/TE 图
 
 使用 `cutrun_count_draw --skip-featurecounts --force-r-reprocess`，输出到新的 analysis 目录。counts 必须来自相同样本集合和 counting 口径。
+
+## 已有BAM，想做下游分析
+如果仅有clean_bam，则首先放在统一目录中生成index。
+```bash
+samtools index -M 
+```
 
 ## 已有 BAM/bigWig/peaks，只做独立分析
 

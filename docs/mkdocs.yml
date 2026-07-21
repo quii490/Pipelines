@@ -76,7 +76,7 @@ nav:
   - 首页: index.md
   - 入门指南:
       - getting-started/index.md
-      - 系统与安装: getting-started/installation.md
+      - 激活环境: getting-started/installation.md
       - 命令行最小知识: getting-started/command-line.md
       - 通用运行流程: getting-started/common-workflow.md
       - 命名与目录: getting-started/naming.md

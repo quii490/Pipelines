@@ -1,29 +1,27 @@
 # ATAC-seq Quick Start
+输入fastq文件，完成ATAC-seq分析和可视化。
 
-| 状态 | 维护人 | 最后审查 | 适用版本 |
-|---|---|---|---|
-| Draft | ATAC-seq maintainers | 2026-07-16 | `main` |
-
-下面是从 FASTQ 到报告的最短安全路径。示例路径必须替换成你自己的公开或本地路径。
-
-## 1. 检查入口
-
+**建议路径都选择绝对路径，VScode可以右键复制绝对路径**
+## 1. 激活环境/检查入口
 ```bash
-bash ATAC-seq/run_auto_atacseq.sh --help
+conda activate /home/machicheng/.conda/envs/chipseq
+#可选 bash /home/machicheng/ATAC-seq/pipeline_final/run_auto_atacseq.sh --help
 ```
-
 ## 2. 准备 FASTQ
+推荐目录如下：
 
 ```text
-/path/to/fastq/
-├── WT_1_R1.fastq.gz
-├── WT_1_R2.fastq.gz
-├── KO_1_R1.fastq.gz
-└── KO_1_R2.fastq.gz
+project_name/
+├── fastq/                 # 原始数据，只读
+	├── WT_1_R1.fastq.gz
+	├── WT_1_R2.fastq.gz
+	├── KO_1_R1.fastq.gz
+	└── KO_1_R2.fastq.gz
+└── results/              
+
 ```
-
+results可以不用手动建文件夹，运行时会自动生成。
 样本名、condition 和 replicate 的详细规则见[输入准备](input.md)。
-
 ## 3. 初始化并检查输入
 
 ```bash

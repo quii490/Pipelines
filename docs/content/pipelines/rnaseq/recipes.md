@@ -1,9 +1,4 @@
 # RNA-seq：按现有文件选择入口
-
-| 状态 | 维护人 | 最后审查 |
-|---|---|---|
-| Draft review | RNA-seq maintainers | 2026-07-16 |
-
 ## 我有 FASTQ 或下载 manifest
 
 使用 `run_auto_rnaseq.sh`。FASTQ 已在本地用 `--fastq-dir`；需要从 accession/URL 下载用 `--manifest`，并设置可写的 `--download-dir`。先 `--dry-run`，再正式运行。

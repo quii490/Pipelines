@@ -1,8 +1,8 @@
 # ATAC-seq pipeline
 
-| 状态 | 维护人 | 最后审查 | 适用版本 |
-|---|---|---|---|
-| Draft | ATAC-seq maintainers | 2026-07-16 | `main` |
+| 状态    | 维护人 | 最后审查       | 适用版本   |
+| ----- | --- | ---------- | ------ |
+| Draft | MCC | 2026-07-16 | `main` |
 
 本流程把 FASTQ 转换为可复核的比对、开放染色质 peaks、信号轨迹、QC 和差异可及性结果。入口是 `ATAC-seq/run_auto_atacseq.sh`。
 

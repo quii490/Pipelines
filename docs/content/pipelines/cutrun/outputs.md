@@ -1,9 +1,5 @@
 # CUT&RUN 输出与结果解释
 
-| 状态 | 维护人 | 最后审查 |
-|---|---|---|
-| Draft review | CUT&RUN maintainers | 2026-07-16 |
-
 ```text
 results/
 ├── manifest/resolved_manifest.csv

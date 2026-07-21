@@ -1,9 +1,5 @@
 # CUT&RUN / CUT&Tag / ChIP-seq Quick Start
 
-| 状态 | 维护人 | 最后审查 | 适用版本 |
-|---|---|---|---|
-| Draft review | CUT&RUN maintainers | 2026-07-16 | `run_auto_chipseq.sh --help` |
-
 以下命令从仓库根目录执行。最安全顺序是：**生成 manifest → 人工修正 control → preview → 正式运行 → 检查状态和报告。**
 
 ## 1. 查看入口

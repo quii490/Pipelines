@@ -1,9 +1,5 @@
 # CUT&RUN Quality Control
 
-| 状态 | 维护人 | 最后审查 | 适用版本 |
-|---|---|---|---|
-| Draft | CUT&RUN maintainers | 2026-07-16 | `main` |
-
 | 指标 | 主要问题 | 异常时检查 |
 |---|---|---|
 | FASTQ/trim | 原始 reads 是否可靠 | adapter、read quality、批次 |

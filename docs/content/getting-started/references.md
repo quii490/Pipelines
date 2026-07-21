@@ -1,9 +1,4 @@
 # 参考基因组与注释
-
-| 状态 | 维护人 | 最后审查 | 适用版本 |
-|---|---|---|---|
-| Active | Reference maintainers | 2026-07-16 | `main` |
-
 FASTA、GTF、aligner index、chrom sizes、blacklist、gene annotation 和 TE annotation 必须属于同一 genome build。
 
 | 资源 | 用途 | 常见不匹配现象 |

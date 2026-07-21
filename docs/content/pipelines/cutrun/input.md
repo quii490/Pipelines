@@ -1,9 +1,4 @@
 # CUT&RUN 输入与 manifest
-
-| 状态 | 维护人 | 最后审查 |
-|---|---|---|
-| Draft review | CUT&RUN maintainers | 2026-07-16 |
-
 ## FASTQ
 
 ```text

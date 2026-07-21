@@ -1,9 +1,5 @@
 # 通用运行流程
 
-| 状态 | 维护人 | 最后审查 | 适用版本 |
-|---|---|---|---|
-| Active | Lab pipeline maintainers | 2026-07-16 | `main` |
-
 ```mermaid
 flowchart LR
   A[确认 assay 和设计] --> B[检查 FASTQ/参考/磁盘]

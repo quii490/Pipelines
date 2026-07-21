@@ -1,15 +1,8 @@
 # RNA-seq 参数参考
-
-| 状态 | 维护人 | 最后审查 | 适用版本 |
-|---|---|---|---|
-| Draft | RNA-seq maintainers | 2026-07-16 | `run_auto_rnaseq.sh --help` |
-
 本页解释推荐值和风险边界；当前参数事实来源始终是：
-
 ```bash
 bash RNA-seq/rnaseq/run_auto_rnaseq.sh --help
 ```
-
 ## 输入、路径和设计
 
 | 参数 | 默认值 | 说明 |

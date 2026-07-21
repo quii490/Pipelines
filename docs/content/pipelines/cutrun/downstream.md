@@ -1,9 +1,5 @@
 # CUT&RUN 下游与 TE 分析
 
-| 状态 | 维护人 | 最后审查 | 适用版本 |
-|---|---|---|---|
-| Draft | CUT&RUN maintainers | 2026-07-16 | `main` |
-
 ## 常规下游
 
 1. 用 standard BAM/track 完成基础 QC；
