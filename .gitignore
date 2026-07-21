@@ -55,3 +55,7 @@ ATAC-seq/PIPELINE_GUIDE.md
 # Explicitly allow tiny public fixtures
 !**/tests/fixtures/**
 !**/tests/fixtures/**/*.gz
+
+# Obsidian personal workspace
+.obsidian/
+.trash/

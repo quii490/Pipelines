@@ -71,7 +71,7 @@ RUN_REDISCOVERTE="auto"
 RUN_REDISCOVERTE_ROLLUP="$(module_default run_rediscoverte_rollup true)"
 RUN_SALMONTE="$(module_default run_salmonte false)"
 RUN_MULTIQC="$(module_default run_multiqc true)"
-MULTIQC_CMD="$(module_default multiqc_cmd /path/to/.conda/envs/emseq/bin/multiqc)"
+MULTIQC_CMD="$(module_default multiqc_cmd /home/machicheng/.conda/envs/emseq/bin/multiqc)"
 RUN_TELESCOPE="$(module_default run_telescope true)"
 RUN_FASTQC="$(module_default run_fastqc true)"
 RUN_RNASEQ_METRICS="$(module_default run_rnaseq_metrics true)"
@@ -94,8 +94,8 @@ PARTIAL_INPUT_POLICY="skip"
 DRY_RUN="false"
 FAILURE_POLICY="core"
 REPLACE_DESIGN="false"
-RNASEQ_ENV="${RNASEQ_ENV:-/path/to/.conda/envs/rnaseq}"
-DOWNSTREAM_ENV="${DOWNSTREAM_ENV:-/path/to/.conda/envs/downstream}"
+RNASEQ_ENV="${RNASEQ_ENV:-/home/machicheng/.conda/envs/rnaseq}"
+DOWNSTREAM_ENV="${DOWNSTREAM_ENV:-/home/machicheng/.conda/envs/downstream}"
 ROLLUP_CONDA_PREFIX=""
 PICARD_MARKDUP_JAVA_HEAP="${PICARD_MARKDUP_JAVA_HEAP:-16g}"
 SRA_THREADS="8"
@@ -374,9 +374,7 @@ AUTOMATION_PID_FILE="${LOG_DIR}/automation_${RUN_TS}.pid"
 PIPELINE_LOG_FILE="${LOG_DIR}/pipeline_${RUN_TS}.log"
 SAMPLESHEET="${INPUTS_DIR}/samplesheet.csv"
 CONTRAST_OUT="${RESULTS_DIR}/contrast.csv"
-LEGACY_CONTRAST_OUT="${INPUTS_DIR}/contrasts.csv"
 SAMPLE_METADATA_AUTO="${RESULTS_DIR}/condition.csv"
-LEGACY_SAMPLE_METADATA_AUTO="${INPUTS_DIR}/sample_metadata.auto.csv"
 RESOLVED_MANIFEST_OUT="${INPUTS_DIR}/manifest.resolved.csv"
 
 ensure_writable_dir() {
@@ -492,7 +490,7 @@ if [[ "${BACKGROUND}" == "true" ]]; then
     echo "[run_auto_rnaseq] 错误：无法写后台日志或 PID 文件：" >&2
     echo "[run_auto_rnaseq]   ${BG_LOG}" >&2
     echo "[run_auto_rnaseq]   ${AUTOMATION_PID_FILE}" >&2
-    echo "[run_auto_rnaseq] 提示：请添加 --results-dir 到当前用户可写目录，例如 /path/to/lab-data/RNAseq/<project>/results。" >&2
+    echo "[run_auto_rnaseq] 提示：请添加 --results-dir 到当前用户可写目录，例如 /home/machicheng/lab-data/RNAseq/<project>/results。" >&2
     exit 1
   fi
   FILTERED_ARGS=()
@@ -581,20 +579,20 @@ resolve_refs() {
   case "$species" in
     hg38)
       if [[ "$human_ref" == "t2t" ]]; then
-        TX2GENE_PATH='/path/to/reference/human_t2t/chm13v2.0.annotation.gtf'
-        TE_ANNOTATION_TSV='/path/to/reference/TE_GTF/hs1_te_annotation.tsv'
+        TX2GENE_PATH='/home/machicheng/reference/human_t2t/chm13v2.0.annotation.gtf'
+        TE_ANNOTATION_TSV='/home/machicheng/reference/TE_GTF/hs1_te_annotation.tsv'
       else
-        TX2GENE_PATH='/path/to/reference/human_hg38/gencode.v49.primary_assembly.annotation.gtf'
-        TE_ANNOTATION_TSV='/path/to/reference/TE_GTF/hg38_te_annotation.tsv'
+        TX2GENE_PATH='/home/machicheng/reference/human_hg38/gencode.v49.primary_assembly.annotation.gtf'
+        TE_ANNOTATION_TSV='/home/machicheng/reference/TE_GTF/hg38_te_annotation.tsv'
       fi
       ;;
     mm10)
-      TX2GENE_PATH='/path/to/reference/mouse_mm10/gencode.vM25.primary_assembly.annotation.gtf'
-      TE_ANNOTATION_TSV='/path/to/reference/TE_GTF/mm10_te_annotation.tsv'
+      TX2GENE_PATH='/home/machicheng/reference/mouse_mm10/gencode.vM25.primary_assembly.annotation.gtf'
+      TE_ANNOTATION_TSV='/home/machicheng/reference/TE_GTF/mm10_te_annotation.tsv'
       ;;
     mm39)
-      TX2GENE_PATH='/path/to/reference/mouse_mm39/gencode.vM38.primary_assembly.annotation.gtf'
-      TE_ANNOTATION_TSV='/path/to/reference/TE_GTF/mm39_te_annotation.tsv'
+      TX2GENE_PATH='/home/machicheng/reference/mouse_mm39/gencode.vM38.primary_assembly.annotation.gtf'
+      TE_ANNOTATION_TSV='/home/machicheng/reference/TE_GTF/mm39_te_annotation.tsv'
       ;;
   esac
 }
@@ -721,9 +719,9 @@ write_condition_template_from_samplesheet() {
     return 0
   fi
   backup_design_file_if_needed "${SAMPLE_METADATA_AUTO}"
-  python3 - <<'PY' "${SAMPLESHEET}" "${SAMPLE_METADATA_AUTO}" "${LEGACY_SAMPLE_METADATA_AUTO}"
+  python3 - <<'PY' "${SAMPLESHEET}" "${SAMPLE_METADATA_AUTO}"
 import csv, sys
-samplesheet, out_csv, legacy_csv = sys.argv[1:4]
+samplesheet, out_csv = sys.argv[1:3]
 rows = []
 seen = set()
 with open(samplesheet, newline='', encoding='utf-8-sig') as fh:
@@ -742,11 +740,10 @@ with open(samplesheet, newline='', encoding='utf-8-sig') as fh:
             'condition': str(row.get('condition', '')).strip() or 'NA',
             'replicate': str(row.get('replicate', '')).strip() or 'NA'
         })
-for path in [out_csv, legacy_csv]:
-    with open(path, 'w', newline='', encoding='utf-8') as wf:
-        writer = csv.DictWriter(wf, fieldnames=['sample', 'condition', 'replicate'])
-        writer.writeheader()
-        writer.writerows(rows)
+with open(out_csv, 'w', newline='', encoding='utf-8') as wf:
+    writer = csv.DictWriter(wf, fieldnames=['sample', 'condition', 'replicate'])
+    writer.writeheader()
+    writer.writerows(rows)
 print(f'[run_auto_rnaseq] 已生成 condition 模板: {out_csv}')
 PY
 }
@@ -758,9 +755,9 @@ write_contrast_template_from_condition() {
     return 0
   fi
   backup_design_file_if_needed "${CONTRAST_OUT}"
-  python3 - <<'PY' "${SAMPLE_METADATA_AUTO}" "${CONTRAST_OUT}" "${LEGACY_CONTRAST_OUT}"
+  python3 - <<'PY' "${SAMPLE_METADATA_AUTO}" "${CONTRAST_OUT}"
 import csv, itertools, sys
-cond_csv, out_csv, legacy_csv = sys.argv[1:4]
+cond_csv, out_csv = sys.argv[1:3]
 conds = []
 with open(cond_csv, newline='', encoding='utf-8-sig') as fh:
     reader = csv.DictReader(fh)
@@ -771,24 +768,15 @@ with open(cond_csv, newline='', encoding='utf-8-sig') as fh:
         if cond and cond.upper() != 'NA' and cond not in conds:
             conds.append(cond)
 rows = [{'case': a, 'control': b} for a, b in itertools.permutations(conds, 2)]
-for path in [out_csv, legacy_csv]:
-    with open(path, 'w', newline='', encoding='utf-8') as wf:
-        writer = csv.DictWriter(wf, fieldnames=['case', 'control'])
-        writer.writeheader()
-        writer.writerows(rows)
+with open(out_csv, 'w', newline='', encoding='utf-8') as wf:
+    writer = csv.DictWriter(wf, fieldnames=['case', 'control'])
+    writer.writeheader()
+    writer.writerows(rows)
 print(f'[run_auto_rnaseq] 已生成 contrast 模板: {out_csv}; rows={len(rows)}')
 PY
 }
 
 prepare_design_files_for_downstream() {
-  if [[ -f "${LEGACY_SAMPLE_METADATA_AUTO}" && ! -f "${SAMPLE_METADATA_AUTO}" ]]; then
-    cp "${LEGACY_SAMPLE_METADATA_AUTO}" "${SAMPLE_METADATA_AUTO}"
-    log_msg "已从旧路径恢复 condition.csv: ${SAMPLE_METADATA_AUTO}" | tee -a "${AUTOMATION_LOG}"
-  fi
-  if [[ -f "${LEGACY_CONTRAST_OUT}" && ! -f "${CONTRAST_OUT}" ]]; then
-    cp "${LEGACY_CONTRAST_OUT}" "${CONTRAST_OUT}"
-    log_msg "已从旧路径恢复 contrast.csv: ${CONTRAST_OUT}" | tee -a "${AUTOMATION_LOG}"
-  fi
   if [[ ! -f "${SAMPLE_METADATA_AUTO}" && -f "${SAMPLESHEET}" ]]; then
     write_condition_template_from_samplesheet | tee -a "${AUTOMATION_LOG}"
   fi

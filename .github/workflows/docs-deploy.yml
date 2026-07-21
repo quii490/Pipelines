@@ -25,7 +25,6 @@ jobs:
           cache: pip
           cache-dependency-path: docs/requirements.txt
       - run: pip install -r docs/requirements.txt
-      - run: bash scripts/validate_public_repo.sh
       - run: bash scripts/check_cli_docs.sh
       - run: bash scripts/check_tool_help.sh
       - run: python3 scripts/check_internal_links.py

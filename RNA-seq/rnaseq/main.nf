@@ -37,6 +37,9 @@ process CHECK_REFS {
     if (params.blacklist) {
         required << params.blacklist
     }
+    if (enabled(params.run_tecount)) {
+        required << params.rmsk
+    }
 
     if (enabled(params.run_rediscoverte) && params.species == 'hg38') {
         required << params.rediscoverte_salmon_index
@@ -47,6 +50,9 @@ process CHECK_REFS {
         required << params.rediscoverte_rollup_conda_prefix
     }
 
+    def refSpecies = params.species.toString().trim().toLowerCase()
+    def starIndex = params.star_index.toString().trim().toLowerCase()
+    def speciesPathCheck = "[[ '${starIndex}' == *'${refSpecies}'* ]] || { echo 'STAR index path does not match species=${refSpecies}: ${params.star_index}' >&2; exit 1; }"
     def checks = required.collect { "[[ -e '${it}' ]] || { echo 'Missing: ${it}' >&2; exit 1; }" }.join('\n')
 
     """
@@ -55,6 +61,12 @@ process CHECK_REFS {
     mkdir -p "\${LOG_DIR}"
     {
       echo "[CHECK_REFS] species=${params.species}"
+      echo "[CHECK_REFS] genome_fasta=${params.genome_fasta}"
+      echo "[CHECK_REFS] gtf_genes=${params.gtf_genes}"
+      echo "[CHECK_REFS] star_index=${params.star_index}"
+      echo "[CHECK_REFS] salmon_index=${params.salmon_index}"
+      echo "[CHECK_REFS] gtf_te=${params.gtf_te}"
+      ${speciesPathCheck}
       ${checks}
       echo OK > refcheck.ok
       echo "[CHECK_REFS] OK"
@@ -152,7 +164,7 @@ process FASTQC_PE {
     set -euo pipefail
     LOG_DIR="${params.outdir}/01_fastqc/logs"
     mkdir -p "\${LOG_DIR}" "${sample}_fastqc"
-    export LD_LIBRARY_PATH="/path/to/.conda/envs/rnaseq/lib:/opt/conda/lib:\${LD_LIBRARY_PATH:-}"
+    export LD_LIBRARY_PATH="/home/machicheng/.conda/envs/rnaseq/lib:/miniconda3/lib:\${LD_LIBRARY_PATH:-}"
     if [[ -n "\${CONDA_PREFIX:-}" ]]; then
       export LD_LIBRARY_PATH="\${CONDA_PREFIX}/lib:\${LD_LIBRARY_PATH}"
     fi
@@ -181,7 +193,7 @@ process FASTQC_SE {
     set -euo pipefail
     LOG_DIR="${params.outdir}/01_fastqc/logs"
     mkdir -p "\${LOG_DIR}" "${sample}_fastqc"
-    export LD_LIBRARY_PATH="/path/to/.conda/envs/rnaseq/lib:/opt/conda/lib:\${LD_LIBRARY_PATH:-}"
+    export LD_LIBRARY_PATH="/home/machicheng/.conda/envs/rnaseq/lib:/miniconda3/lib:\${LD_LIBRARY_PATH:-}"
     if [[ -n "\${CONDA_PREFIX:-}" ]]; then
       export LD_LIBRARY_PATH="\${CONDA_PREFIX}/lib:\${LD_LIBRARY_PATH}"
     fi
@@ -1161,7 +1173,7 @@ process SALMONTE_SAMPLE_PE {
       --salmonte-dir ${params.salmonte_dir} \
       --reference ${params.salmonte_ref} \
       --input-dir ${sample}_salmonte_input \
-      --conda-prefix /path/to/.conda/envs/salmonte \
+      --conda-prefix /home/machicheng/.conda/envs/salmonte \
       --exprtype count \
       --outdir ${sample}_SalmonTE_output \
       2>&1 | tee "\${LOG_DIR}/${sample}.SalmonTE.log"
@@ -1191,7 +1203,7 @@ process SALMONTE_SAMPLE_SE {
       --salmonte-dir ${params.salmonte_dir} \
       --reference ${params.salmonte_ref} \
       --input-dir ${sample}_salmonte_input \
-      --conda-prefix /path/to/.conda/envs/salmonte \
+      --conda-prefix /home/machicheng/.conda/envs/salmonte \
       --exprtype count \
       --outdir ${sample}_SalmonTE_output \
       2>&1 | tee "\${LOG_DIR}/${sample}.SalmonTE.log"
