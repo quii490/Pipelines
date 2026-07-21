@@ -568,7 +568,7 @@
   <span class="md-ellipsis">
     
   
-    系统与安装
+    激活环境
   
 
     
@@ -3742,61 +3742,41 @@
 
 
 <h1 id="rna-seq">RNA-seq 输入准备<a class="headerlink" href="#rna-seq" title="Permanent link">&para;</a></h1>
-<table>
-<thead>
-<tr>
-<th>状态</th>
-<th>维护人</th>
-<th>最后审查</th>
-<th>适用版本</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Draft</td>
-<td>RNA-seq maintainers</td>
-<td>2026-07-16</td>
-<td><code>main</code></td>
-</tr>
-</tbody>
-</table>
 <h2 id="_1">输入模式<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>入口至少需要以下一种：</p>
-<ol>
-<li><code>--fastq-dir</code>：递归扫描本地 FASTQ。</li>
-<li><code>--manifest</code>：读取本地文件、FASTQ URL、SRR/ERR/DRR 或部分 GSM accession。</li>
-<li><code>--downstream</code>：不跑 FASTQ 上游，只读取已有结果和设计文件。</li>
-</ol>
+<p>入口至少需要以下一种：
+1. <code>--fastq-dir</code>：递归扫描本地 FASTQ。
+2. <code>--manifest</code>：读取本地文件、FASTQ URL、SRR/ERR/DRR 或部分 GSM accession。
+3. <code>--downstream</code>：不跑 FASTQ 上游，只读取已有结果和设计文件。</p>
 <h2 id="fastq">FASTQ 命名<a class="headerlink" href="#fastq" title="Permanent link">&para;</a></h2>
-<p>默认使用 <code>_R1</code> 和 <code>_R2</code> 判断 mates，可用 <code>--r1-pattern</code>、<code>--r2-pattern</code> 覆盖。</p>
+<p>默认使用 <code>_R1</code> 和 <code>_R2</code> 判断 mates，可用 <code>--r1-pattern</code>、<code>--r2-pattern</code> 覆盖。
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>WT_1_R1.fastq.gz
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>WT_1_R2.fastq.gz
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>WT_2_R1.fastq.gz
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>WT_2_R2.fastq.gz
 </code></pre></div>
-<p>常见错误：重复 sample ID、R2 缺失、R1/R2 basename 不一致、一个样本出现多套无法区分的 FASTQ、路径指向结果目录而非原始数据目录。</p>
+常见错误：重复 sample ID、R2 缺失、R1/R2 basename 不一致、一个样本出现多套无法区分的 FASTQ、路径指向结果目录而非原始数据目录。</p>
 <h2 id="metadata">Metadata<a class="headerlink" href="#metadata" title="Permanent link">&para;</a></h2>
-<p>可以通过 <code>--sample-metadata</code> 提供：</p>
+<p>可以通过 <code>--sample-metadata</code> 提供：
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sample,condition,replicate
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>WT_1,WT,1
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>WT_2,WT,2
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>KO_1,KO,1
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>KO_2,KO,2
 </code></pre></div>
-<p>也可以重复使用：</p>
+也可以重复使用：
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>--sample-meta<span class="w"> </span>WT_1:WT:1<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>--sample-meta<span class="w"> </span>WT_2:WT:2
 </code></pre></div>
-<p>或按组映射：</p>
+或按组映射：
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>--condition-map<span class="w"> </span>WT:WT_1,WT_2<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>--condition-map<span class="w"> </span>KO:KO_1,KO_2
-</code></pre></div>
+</code></pre></div></p>
 <h2 id="contrast">Contrast<a class="headerlink" href="#contrast" title="Permanent link">&para;</a></h2>
-<p>推荐 CSV：</p>
+<p>推荐 CSV：
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>case,control
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>KO,WT
 </code></pre></div>
-<p>也可以重复使用 <code>--contrast KO:WT</code>。<code>case</code> 是分子，正 log2 fold change 表示 case 相对 control 增高。</p>
+也可以重复使用 <code>--contrast KO:WT</code>。<code>case</code> 是分子，正 log2 fold change 表示 case 相对 control 增高。</p>
 <h2 id="strandedness">Strandedness<a class="headerlink" href="#strandedness" title="Permanent link">&para;</a></h2>
 <p><code>--strand</code> 同时控制 gene 和 TE counting：</p>
 <table>
@@ -3826,9 +3806,9 @@
 <ul>
 <li><code>--species hg38 --human-ref hg38</code>：常规人类 hg38。</li>
 <li><code>--species hg38 --human-ref t2t</code>：T2T/CHM13 分支；需相应资源。</li>
-<li><code>--species mm10</code>、<code>--species mm39</code>：小鼠对应 build。</li>
+<li><code>--species mm10</code>、<code>--species mm39</code>：小鼠对应 build。
+FASTA、GTF、STAR/HISAT2 index、TE annotation 和 chromosome naming 必须同 build。禁止只替换其中一个文件。</li>
 </ul>
-<p>FASTA、GTF、STAR/HISAT2 index、TE annotation 和 chromosome naming 必须同 build。禁止只替换其中一个文件。</p>
 
 
 

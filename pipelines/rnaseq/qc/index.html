@@ -568,7 +568,7 @@
   <span class="md-ellipsis">
     
   
-    系统与安装
+    激活环境
   
 
     
@@ -1153,28 +1153,6 @@
     <span class="md-ellipsis">
       
         Reads 层
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#alignment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Alignment 层
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#assignment-strandedness" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Assignment 和 strandedness
       
     </span>
   </a>
@@ -3673,28 +3651,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#alignment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Alignment 层
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#assignment-strandedness" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Assignment 和 strandedness
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#duplicate" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3764,24 +3720,6 @@
 
 
 <h1 id="rna-seq-quality-control">RNA-seq Quality Control<a class="headerlink" href="#rna-seq-quality-control" title="Permanent link">&para;</a></h1>
-<table>
-<thead>
-<tr>
-<th>状态</th>
-<th>维护人</th>
-<th>最后审查</th>
-<th>适用版本</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Draft</td>
-<td>RNA-seq maintainers</td>
-<td>2026-07-16</td>
-<td><code>main</code></td>
-</tr>
-</tbody>
-</table>
 <p>QC 的目标不是让所有指标都“变绿”，而是识别技术失败、样本错误和会改变结论的偏差。阈值依赖物种、组织、read length、建库和测序深度；本页范围是调查触发条件，最终实验室阈值需维护者确认。</p>
 <h2 id="reads">Reads 层<a class="headerlink" href="#reads" title="Permanent link">&para;</a></h2>
 <table>
@@ -3813,12 +3751,33 @@
 <td>能解释为 rRNA/adapter/高表达转录本</td>
 <td>污染或建库问题</td>
 </tr>
+<tr>
+<td>## Alignment 层</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><em>主要看STAR的mapping rate，一般在80%以上为优。若mapping rate低，且multi-mapping高则建库质量可能有问题。</em></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Mapping rate 应结合 uniquely/multi-mapped、unmapped 原因和同批次样本分布解释。单一样本明显低于其余样本时依次检查：物种/build、FASTQ 完整性、污染、read quality、rRNA 和样本身份。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>STAR index、GTF 与 FASTA build 不一致可能仍产生 BAM，但 counts 和 annotation 会失真。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>## Assignment 和 strandedness</td>
+<td></td>
+<td></td>
+</tr>
 </tbody>
 </table>
-<h2 id="alignment">Alignment 层<a class="headerlink" href="#alignment" title="Permanent link">&para;</a></h2>
-<p>Mapping rate 应结合 uniquely/multi-mapped、unmapped 原因和同批次样本分布解释。单一样本明显低于其余样本时依次检查：物种/build、FASTQ 完整性、污染、read quality、rRNA 和样本身份。</p>
-<p>STAR index、GTF 与 FASTA build 不一致可能仍产生 BAM，但 counts 和 annotation 会失真。</p>
-<h2 id="assignment-strandedness">Assignment 和 strandedness<a class="headerlink" href="#assignment-strandedness" title="Permanent link">&para;</a></h2>
 <p>featureCounts assigned rate 异常低时检查：</p>
 <ol>
 <li>GTF chromosome 名称是否与 BAM 一致。</li>

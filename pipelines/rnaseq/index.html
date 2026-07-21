@@ -568,7 +568,7 @@
   <span class="md-ellipsis">
     
   
-    系统与安装
+    激活环境
   
 
     
@@ -3607,32 +3607,14 @@
 
 
 <h1 id="rna-seq-pipeline">RNA-seq Pipeline<a class="headerlink" href="#rna-seq-pipeline" title="Permanent link">&para;</a></h1>
-<table>
-<thead>
-<tr>
-<th>状态</th>
-<th>维护人</th>
-<th>最后审查</th>
-<th>适用版本</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Draft</td>
-<td>RNA-seq maintainers</td>
-<td>2026-07-16</td>
-<td><code>main</code> / <code>run_auto_rnaseq.sh</code></td>
-</tr>
-</tbody>
-</table>
 <p>本流程面向常规 bulk RNA-seq，从本地 FASTQ 或 accession manifest 开始，完成 reads 质控、gene alignment/quantification、多个 TE quantification 分支、MultiQC、差异表达、GSEA 和标准图形。推荐入口是：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>RNA-seq/rnaseq/run_auto_rnaseq.sh
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/home/machicheng/RNA-seq/Pipeline/rnaseq/rnaseq/run_auto_rnaseq.sh
 </code></pre></div>
 <h2 id="_1">适用范围<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Illumina bulk RNA-seq，支持 PE/SE 自动识别。</li>
-<li>人类 <code>hg38</code>，并可选择 T2T/CHM13 reference；小鼠 <code>mm10</code>、<code>mm39</code>。</li>
-<li>有 biological replicates 的 gene/TE differential expression。</li>
+<li>人类 <code>hg38</code>；小鼠 <code>mm10</code>、<code>mm39</code>。</li>
+<li>有/无 biological replicates 的 gene/TE differential expression。</li>
 <li>从已有 BAM、count matrix、DE matrix 或 bigWig 补做分析。</li>
 </ul>
 <p>不适用于 single-cell、spatial、small RNA、long-read 或 allele-specific RNA-seq。没有 biological replicate 时只能做明确标注的探索性 effect-size 分析。</p>

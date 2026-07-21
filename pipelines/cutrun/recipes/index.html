@@ -568,7 +568,7 @@
   <span class="md-ellipsis">
     
   
-    系统与安装
+    激活环境
   
 
     
@@ -1830,6 +1830,17 @@
     <span class="md-ellipsis">
       
         已有 counts，只想重画 gene/TE 图
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        已有BAM，想做下游分析
       
     </span>
   </a>
@@ -3706,6 +3717,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#bam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        已有BAM，想做下游分析
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#bambigwigpeaks" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3764,22 +3786,6 @@
 
 
 <h1 id="cutrun">CUT&amp;RUN：按现有文件选择入口<a class="headerlink" href="#cutrun" title="Permanent link">&para;</a></h1>
-<table>
-<thead>
-<tr>
-<th>状态</th>
-<th>维护人</th>
-<th>最后审查</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Draft review</td>
-<td>CUT&amp;RUN maintainers</td>
-<td>2026-07-16</td>
-</tr>
-</tbody>
-</table>
 <h2 id="fastq">我有 FASTQ<a class="headerlink" href="#fastq" title="Permanent link">&para;</a></h2>
 <p>按 <a href="../quick-start/">Quick Start</a> 生成 manifest、preview 并运行 <code>run_auto_chipseq.sh --run-downstream</code>。</p>
 <h2 id="_1">核心流程完成，只想运行/恢复下游<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
@@ -3799,6 +3805,10 @@
 <p>这是中断恢复工具；新项目应让 Nextflow 主流程生成 peaks。运行前确认 matched control 与 narrow/broad 策略。</p>
 <h2 id="counts-genete">已有 counts，只想重画 gene/TE 图<a class="headerlink" href="#counts-genete" title="Permanent link">&para;</a></h2>
 <p>使用 <code>cutrun_count_draw --skip-featurecounts --force-r-reprocess</code>，输出到新的 analysis 目录。counts 必须来自相同样本集合和 counting 口径。</p>
+<h2 id="bam">已有BAM，想做下游分析<a class="headerlink" href="#bam" title="Permanent link">&para;</a></h2>
+<p>如果仅有clean_bam，则首先放在统一目录中生成index。
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>samtools<span class="w"> </span>index<span class="w"> </span>-M<span class="w"> </span>
+</code></pre></div></p>
 <h2 id="bambigwigpeaks">已有 BAM/bigWig/peaks，只做独立分析<a class="headerlink" href="#bambigwigpeaks" title="Permanent link">&para;</a></h2>
 <ul>
 <li>BAM correlation：<code>cutrun_bam_cor.sh</code>；</li>

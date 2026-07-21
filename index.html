@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lab-bioinformatics-pipelines" class="md-skip">
+        <a href="#zhaolab-bioinformatics-pipelines" class="md-skip">
           跳转至
         </a>
       
@@ -514,18 +514,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        先按手里的文件选择
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pipeline" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        选择 pipeline
+        选择服务器
       
     </span>
   </a>
@@ -534,6 +523,17 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        先按手里的文件选择
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         新成员最短学习路径
@@ -644,7 +644,7 @@
   <span class="md-ellipsis">
     
   
-    系统与安装
+    激活环境
   
 
     
@@ -3601,18 +3601,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        先按手里的文件选择
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pipeline" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        选择 pipeline
+        选择服务器
       
     </span>
   </a>
@@ -3621,6 +3610,17 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        先按手里的文件选择
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         新成员最短学习路径
@@ -3655,7 +3655,7 @@
   
 
 
-<h1 id="lab-bioinformatics-pipelines">Lab Bioinformatics Pipelines<a class="headerlink" href="#lab-bioinformatics-pipelines" title="Permanent link">&para;</a></h1>
+<h1 id="zhaolab-bioinformatics-pipelines">ZhaoLab Bioinformatics Pipelines<a class="headerlink" href="#zhaolab-bioinformatics-pipelines" title="Permanent link">&para;</a></h1>
 <table>
 <thead>
 <tr>
@@ -3670,20 +3670,22 @@
 </tr>
 <tr>
 <td>维护人</td>
-<td>Lab pipeline maintainers</td>
+<td>CC</td>
 </tr>
 <tr>
-<td>最后审查</td>
+<td>最后编辑</td>
 <td>2026-07-16</td>
-</tr>
-<tr>
-<td>文档版本</td>
-<td><code>main</code></td>
 </tr>
 </tbody>
 </table>
-<p>这里是 RNA-seq、ATAC-seq、CUT&amp;RUN/CUT&amp;Tag/ChIP-seq 的统一中文使用手册。命令和参数保留英文，重点回答：<strong>从什么数据开始、应该运行哪个入口、输出在哪里、结果能不能解释、失败后怎样安全续跑。</strong></p>
-<h2 id="_1">先按手里的文件选择<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>这里是 ZhaoLab RNA-seq、ATAC-seq、CUT&amp;RUN/CUT&amp;Tag/ChIP-seq  pipelines的中文使用手册。命令和参数保留英文。</p>
+<h2 id="_1">选择服务器<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ol>
+<li>推荐使用医学院集群，计算、存储资源充足，pipelines部署完整且经过检查。
+    如何登录并使用医学院集群：</li>
+<li>如果数据量较小、只是做简单分析、医学院集群坏了😓，可以用实验室服务器。</li>
+</ol>
+<h2 id="_2">先按手里的文件选择<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -3720,8 +3722,8 @@
 </tr>
 <tr>
 <td>DE/差异 region 表</td>
-<td>补图、注释、pathway/TE 图</td>
-<td>heatmap、annotation、motif</td>
+<td>火山图/MA图、注释、pathway/TE 图</td>
+<td>heatmap、annotation、motif、火山图</td>
 <td>annotation、motif、heatmap</td>
 </tr>
 <tr>
@@ -3730,9 +3732,20 @@
 <td>TSS、region/TE heatmap</td>
 <td>correlation、region/TE heatmap</td>
 </tr>
+<tr>
+<td>## 选择 pipeline</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>看你做了啥实验🧪</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
 </tbody>
 </table>
-<h2 id="pipeline">选择 pipeline<a class="headerlink" href="#pipeline" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -3754,12 +3767,12 @@
 </tr>
 <tr>
 <td>蛋白/组蛋白结合、CUT&amp;RUN、CUT&amp;Tag、ChIP-seq</td>
-<td>CUT&amp;RUN pipeline（Draft，仍在开发）</td>
+<td>CUT&amp;RUN</td>
 <td><a href="pipelines/cutrun/quick-start/">Quick Start</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="_2">新成员最短学习路径<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_3">新成员最短学习路径<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ol>
 <li>阅读<a href="getting-started/">开始前检查</a>和<a href="getting-started/command-line/">命令行最小知识</a>。</li>
 <li>进入目标 pipeline 的 Quick Start，先运行 <code>--help</code> 和 dry-run/preview。</li>
